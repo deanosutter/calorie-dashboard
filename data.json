@@ -1,14 +1,23 @@
 {
   "schema_version": 2,
   "settings": {
-    "daily_calorie_goal": null,
-    "daily_protein_goal_g": null,
+    "daily_calorie_goal": 1500,
+    "daily_protein_goal_g": 170,
     "timezone": "UTC",
     "last_watch_sync": null,
-    "notes": "daily_calorie_goal and daily_protein_goal_g are optional — set them by telling Claude e.g. 'set my daily calorie goal to 2200' or 'set my protein goal to 160'. timezone controls how dates/times are stamped on entries — tell Claude your timezone to set it once."
+    "notes": "daily_calorie_goal and daily_protein_goal_g are optional — set them by telling Claude e.g. 'set my daily calorie goal to 2200' or 'set my protein goal to 160'. protein_goal was set using a bodyweight-based heuristic (0.8-1g per lb) for lifting-while-in-a-deficit, at ~189lb — recalculate if bodyweight changes meaningfully. timezone controls how dates/times are stamped on entries — tell Claude your timezone to set it once."
   },
   "recipes": [],
   "food_entries": [],
   "routines": [],
-  "workout_entries": []
+  "workout_entries": [],
+  "weight_entries": [
+    {
+      "date": "2026-08-09",
+      "weight": 189,
+      "unit": "lb",
+      "source": "reported",
+      "notes": "Approximate, from phone/scale sync as of the day before this was logged."
+    }
+  ]
 }
