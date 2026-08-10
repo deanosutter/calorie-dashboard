@@ -11,6 +11,7 @@
     {
       "id": "sausage-egg-casserole",
       "name": "Sausage Egg Casserole",
+      "type": "recipe",
       "match_phrases": [
         "sausage egg casserole",
         "egg casserole",
@@ -88,6 +89,7 @@
     {
       "id": "tj-teeny-tiny-avocado",
       "name": "Trader Joe's Teeny Tiny Avocado",
+      "type": "item",
       "match_phrases": [
         "teeny tiny avocado",
         "tiny avocado",

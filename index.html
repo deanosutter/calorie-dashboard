@@ -178,10 +178,18 @@ const TEMPLATE = `
 
       <div class="tab-panel" id="tab-library">
         <div class="card">
-          <div class="section-title">Saved recipes</div>
-          <div class="section-sub">Full ingredient breakdown. Claude uses these to recompute on the fly when you mention a change (fewer squares, a swapped or omitted ingredient, a half batch, etc.).</div>
+          <div class="section-title">Recipes</div>
+          <div class="section-sub">Dishes made from multiple ingredients. Claude uses these to recompute on the fly when you mention a change (fewer squares, a swapped or omitted ingredient, a half batch, etc.).</div>
           <table><thead><tr><th>Name</th><th>Ingredients</th><th>Per unit</th></tr></thead>
             <tbody id="recipe-table"><tr class="empty-row"><td colspan="3">No recipes saved yet — they get added automatically the first time you log something and confirm you want it remembered.</td></tr></tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <div class="section-title">Saved items</div>
+          <div class="section-sub">Single discrete foods/products, logged as-is (not a composed recipe).</div>
+          <table><thead><tr><th>Name</th><th>Unit</th><th>Per unit</th></tr></thead>
+            <tbody id="item-table"><tr class="empty-row"><td colspan="3">No saved items yet.</td></tr></tbody>
           </table>
         </div>
 
@@ -389,12 +397,23 @@ function renderTables() {
   const recipeById = {};
   DATA.recipes.forEach(r => { recipeById[r.id] = r; });
 
+  const recipes = DATA.recipes.filter(r => r.type !== 'item');
+  const items = DATA.recipes.filter(r => r.type === 'item');
+
   const recipeBody = document.getElementById('recipe-table');
-  if (DATA.recipes.length) {
-    recipeBody.innerHTML = DATA.recipes.map(r => {
+  if (recipes.length) {
+    recipeBody.innerHTML = recipes.map(r => {
       const ingredients = (r.ingredients || []).map(i => `${i.qty} ${escapeHtml(i.unit)} ${escapeHtml(i.name)} (${i.calories} cal${i.protein_g != null ? ', ' + i.protein_g + 'g' : ''})`).join('<br>');
       const perUnit = `${r.calories_per_unit} cal${r.protein_g_per_unit != null ? ' / ' + r.protein_g_per_unit + 'g' : ''} per ${escapeHtml(r.unit)}`;
       return `<tr><td>${escapeHtml(r.name)}</td><td>${ingredients || '—'}</td><td>${perUnit}</td></tr>`;
+    }).join('');
+  }
+
+  const itemBody = document.getElementById('item-table');
+  if (items.length) {
+    itemBody.innerHTML = items.map(r => {
+      const perUnit = `${r.calories_per_unit} cal${r.protein_g_per_unit != null ? ' / ' + r.protein_g_per_unit + 'g' : ''} per ${escapeHtml(r.unit)}`;
+      return `<tr><td>${escapeHtml(r.name)}</td><td>${escapeHtml(r.unit)}</td><td>${perUnit}</td></tr>`;
     }).join('');
   }
 
