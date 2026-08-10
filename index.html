@@ -17,6 +17,7 @@
     --border:         rgba(11,11,11,0.10);
     --series-1:       #2a78d6;
     --series-1-wash:  rgba(42,120,214,0.10);
+    --series-2:       #a25ddc;
     --status-good:    #0ca30c;
     --status-critical:#d03b3b;
   }
@@ -33,6 +34,7 @@
       --border:         rgba(255,255,255,0.10);
       --series-1:       #3987e5;
       --series-1-wash:  rgba(57,135,229,0.14);
+      --series-2:       #bb86e8;
       --status-good:    #0ca30c;
       --status-critical:#e66767;
     }
@@ -40,10 +42,22 @@
   * { box-sizing: border-box; }
   body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--page-plane); color: var(--text-primary); }
   .wrap { max-width: 900px; margin: 0 auto; padding: 28px 20px 60px; }
-  header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 6px; }
+  header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; flex-wrap: wrap; gap: 6px; }
   h1 { font-size: 20px; font-weight: 600; margin: 0; }
   .date-label { color: var(--text-secondary); font-size: 14px; }
-  .refresh-hint { color: var(--text-muted); font-size: 12px; margin-top: -12px; margin-bottom: 16px; }
+  .refresh-hint { color: var(--text-muted); font-size: 12px; margin-bottom: 16px; }
+
+  .tab-row { display: flex; gap: 4px; margin-bottom: 20px; border-bottom: 1px solid var(--border); }
+  .tab-btn {
+    font: inherit; font-size: 14px; font-weight: 500; padding: 10px 16px; cursor: pointer;
+    border: none; background: transparent; color: var(--text-muted); border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+  }
+  .tab-btn:hover { color: var(--text-primary); }
+  .tab-btn.active { color: var(--series-1); border-bottom-color: var(--series-1); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
   .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 16px; position: relative; }
   .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; }
   .stat-tile { display: flex; flex-direction: column; gap: 4px; }
@@ -82,9 +96,11 @@
   .bar:hover .tip, .pt:hover .tip { opacity: 1; }
 
   .linechart { position: relative; height: 200px; border-top: 1px solid var(--gridline); padding-top: 10px; }
+  .linechart.small { height: 120px; }
   .linechart svg { width: 100%; height: 100%; overflow: visible; }
   .pt { position: absolute; width: 24px; height: 24px; margin-left: -12px; margin-top: -12px; cursor: default; }
   .pt::after { content: ''; position: absolute; left: 8px; top: 8px; width: 8px; height: 8px; border-radius: 50%; background: var(--series-1); border: 2px solid var(--surface-1); }
+  .pt.s2::after { background: var(--series-2); }
 
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
   th { text-align: left; font-weight: 500; color: var(--text-muted); font-size: 12px; padding: 6px 8px; border-bottom: 1px solid var(--gridline); }
@@ -93,6 +109,14 @@
   .cmd-hint { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
   code { background: color-mix(in srgb, var(--text-muted) 14%, transparent); padding: 1px 5px; border-radius: 4px; font-size: 12px; }
   .load-state { text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 14px; }
+
+  .exercise-card { margin-bottom: 20px; }
+  .exercise-name { font-size: 15px; font-weight: 600; margin: 0 0 2px 0; }
+  .exercise-latest { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; }
+  .note-list { list-style: none; margin: 0; padding: 0; font-size: 13px; }
+  .note-list li { padding: 8px 0; border-bottom: 1px solid var(--gridline); }
+  .note-list li:last-child { border-bottom: none; }
+  .note-date { color: var(--text-muted); font-size: 12px; margin-right: 8px; font-variant-numeric: tabular-nums; }
 </style>
 </head>
 <body>
@@ -110,48 +134,64 @@ const TEMPLATE = `
       </header>
       <div class="refresh-hint">Refresh this page any time to see your latest logged entries.</div>
 
-      <div class="card">
-        <div class="stat-row" id="stat-row"></div>
+      <div class="tab-row">
+        <button class="tab-btn active" data-tab="dashboard">Dashboard</button>
+        <button class="tab-btn" data-tab="progress">Progress</button>
+        <button class="tab-btn" data-tab="library">Library</button>
       </div>
 
-      <div class="card">
-        <div class="section-title">Calories eaten</div>
-        <div class="section-sub" id="chart-sub">Last 7 days</div>
-        <div class="filter-row">
-          <button class="filter-btn active" data-view="day">Day</button>
-          <button class="filter-btn" data-view="week">Week</button>
-          <button class="filter-btn" data-view="month">Month</button>
+      <div class="tab-panel active" id="tab-dashboard">
+        <div class="card">
+          <div class="stat-row" id="stat-row"></div>
         </div>
-        <div id="chart-slot"></div>
-      </div>
 
-      <div class="card">
-        <div class="section-title">Recent food entries</div>
-        <table><thead><tr><th>Date</th><th>Item</th><th>Qty</th><th>Calories</th><th>Protein</th></tr></thead>
-          <tbody id="food-table"><tr class="empty-row"><td colspan="5">No food entries yet.</td></tr></tbody>
-        </table>
-      </div>
+        <div class="card">
+          <div class="section-title">Calories eaten</div>
+          <div class="section-sub" id="chart-sub">Last 7 days</div>
+          <div class="filter-row">
+            <button class="filter-btn active" data-view="day">Day</button>
+            <button class="filter-btn" data-view="week">Week</button>
+            <button class="filter-btn" data-view="month">Month</button>
+          </div>
+          <div id="chart-slot"></div>
+        </div>
 
-      <div class="card">
-        <div class="section-title">Recent workouts</div>
-        <table><thead><tr><th>Date</th><th>Routine</th><th>Duration</th><th>Calories burned</th></tr></thead>
-          <tbody id="workout-table"><tr class="empty-row"><td colspan="4">No workouts logged yet.</td></tr></tbody>
-        </table>
-      </div>
+        <div class="card">
+          <div class="section-title">Recent food entries</div>
+          <table><thead><tr><th>Date</th><th>Item</th><th>Qty</th><th>Calories</th><th>Protein</th></tr></thead>
+            <tbody id="food-table"><tr class="empty-row"><td colspan="5">No food entries yet.</td></tr></tbody>
+          </table>
+        </div>
 
-      <div class="card">
-        <div class="section-title">Saved recipes</div>
-        <table><thead><tr><th>Name</th><th>Unit</th><th>Calories / unit</th><th>Protein / unit</th></tr></thead>
-          <tbody id="recipe-table"><tr class="empty-row"><td colspan="4">No recipes saved yet — they get added automatically the first time you log something and confirm you want it remembered.</td></tr></tbody>
-        </table>
-      </div>
-
-      <div class="card">
-        <div class="section-title">Saved routines</div>
-        <table><thead><tr><th>Name</th><th>Exercises</th></tr></thead>
-          <tbody id="routine-table"><tr class="empty-row"><td colspan="2">No routines saved yet.</td></tr></tbody>
-        </table>
+        <div class="card">
+          <div class="section-title">Recent workouts</div>
+          <table><thead><tr><th>Date</th><th>Routine</th><th>Duration</th><th>Cal burned</th><th>Notes</th></tr></thead>
+            <tbody id="workout-table"><tr class="empty-row"><td colspan="5">No workouts logged yet.</td></tr></tbody>
+          </table>
+        </div>
         <div class="cmd-hint">Try: <code>log food: two squares of the lasagna</code> &middot; <code>did push day</code> &middot; <code>show my dashboard</code></div>
+      </div>
+
+      <div class="tab-panel" id="tab-progress">
+        <div id="progress-slot"></div>
+      </div>
+
+      <div class="tab-panel" id="tab-library">
+        <div class="card">
+          <div class="section-title">Saved recipes</div>
+          <div class="section-sub">Reference only — Claude uses these automatically when you log food that matches.</div>
+          <table><thead><tr><th>Name</th><th>Unit</th><th>Calories / unit</th><th>Protein / unit</th></tr></thead>
+            <tbody id="recipe-table"><tr class="empty-row"><td colspan="4">No recipes saved yet — they get added automatically the first time you log something and confirm you want it remembered.</td></tr></tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <div class="section-title">Saved routines</div>
+          <div class="section-sub">Reference only — Claude uses these automatically when you say things like "did push day."</div>
+          <table><thead><tr><th>Name</th><th>Exercises</th></tr></thead>
+            <tbody id="routine-table"><tr class="empty-row"><td colspan="2">No routines saved yet.</td></tr></tbody>
+          </table>
+        </div>
       </div>
 `;
 
@@ -300,6 +340,11 @@ function setView(view) {
   renderers[view]();
 }
 
+function setTab(tab) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === 'tab-' + tab));
+}
+
 function renderTables() {
   const foodBody = document.getElementById('food-table');
   if (DATA.food_entries.length) {
@@ -310,7 +355,7 @@ function renderTables() {
   const workoutBody = document.getElementById('workout-table');
   if (DATA.workout_entries.length) {
     const rows = [...DATA.workout_entries].sort((a,b) => (b.date+(b.time||'')).localeCompare(a.date+(a.time||''))).slice(0, 10);
-    workoutBody.innerHTML = rows.map(w => `<tr><td>${w.date}</td><td>${escapeHtml(w.routine_name || 'One-off')}</td><td>${w.duration_min ? w.duration_min + ' min' : '—'}</td><td>${w.calories_burned || '—'}</td></tr>`).join('');
+    workoutBody.innerHTML = rows.map(w => `<tr><td>${w.date}</td><td>${escapeHtml(w.routine_name || 'One-off')}</td><td>${w.duration_min ? w.duration_min + ' min' : '—'}</td><td>${w.calories_burned || '—'}</td><td>${escapeHtml(w.notes || '—')}</td></tr>`).join('');
   }
 
   const recipeBody = document.getElementById('recipe-table');
@@ -322,6 +367,73 @@ function renderTables() {
   if (DATA.routines.length) {
     routineBody.innerHTML = DATA.routines.map(r => `<tr><td>${escapeHtml(r.name)}</td><td>${r.exercises.map(e => escapeHtml(e.name)).join(', ')}</td></tr>`).join('');
   }
+}
+
+// --- Progress tab: per-exercise weight history + chronological notes ---
+function renderProgress() {
+  const slot = document.getElementById('progress-slot');
+  const entries = [...DATA.workout_entries].sort((a,b) => (a.date+(a.time||'')).localeCompare(b.date+(b.time||'')));
+
+  if (!entries.length) {
+    slot.innerHTML = '<div class="card"><div class="chart-empty">No workouts logged yet.<br>Once you log a few, weight trends and notes will show up here.</div></div>';
+    return;
+  }
+
+  // Group per-exercise weight history across all logged workouts
+  const byExercise = {};
+  entries.forEach(w => {
+    (w.exercises || []).forEach(ex => {
+      if (ex.weight == null) return;
+      if (!byExercise[ex.name]) byExercise[ex.name] = [];
+      byExercise[ex.name].push({ date: w.date, weight: Number(ex.weight), unit: ex.unit || '', reps: ex.reps, sets: ex.sets });
+    });
+  });
+
+  let exerciseHtml = Object.keys(byExercise).sort().map(name => {
+    const hist = byExercise[name];
+    const latest = hist[hist.length - 1];
+    const first = hist[0];
+    const delta = latest.weight - first.weight;
+    const deltaMsg = hist.length > 1
+      ? (delta === 0 ? 'Holding steady' : (delta > 0 ? `Up ${delta}${latest.unit} since ${shortDate(parseDate(first.date))}` : `Down ${Math.abs(delta)}${latest.unit} since ${shortDate(parseDate(first.date))}`))
+      : 'Only one session logged so far';
+
+    let chart = '';
+    if (hist.length > 1) {
+      const values = hist.map(h => h.weight);
+      const max = Math.max(...values) * 1.1;
+      const min = Math.min(0, Math.min(...values) * 0.9);
+      const W = 600, H = 100;
+      const stepX = hist.length > 1 ? W / (hist.length - 1) : 0;
+      const pts = values.map((v, i) => [i * stepX, H - ((v - min) / (max - min || 1)) * H]);
+      const path = pts.map((p, i) => (i === 0 ? 'M' : 'L') + p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' ');
+      const dots = pts.map((p, i) => {
+        const pct = (p[0] / W) * 100, topPct = (p[1] / H) * 100;
+        const h = hist[i];
+        return `<div class="pt" style="left:${pct}%; top:${topPct}%"><span class="tip">${shortDate(parseDate(h.date))}: ${h.weight}${h.unit}${h.reps ? ' x' + h.reps : ''}</span></div>`;
+      }).join('');
+      chart = `<div class="linechart small">
+        <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+          <path d="${path}" fill="none" stroke="var(--series-1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+        </svg>
+        ${dots}
+      </div>`;
+    }
+
+    return `<div class="card exercise-card">
+      <div class="exercise-name">${escapeHtml(name)}</div>
+      <div class="exercise-latest">Latest: ${latest.weight}${latest.unit}${latest.reps ? ' x ' + latest.reps : ''}${latest.sets ? ', ' + latest.sets + ' sets' : ''} on ${shortDate(parseDate(latest.date))} &middot; ${deltaMsg}</div>
+      ${chart}
+    </div>`;
+  }).join('');
+
+  // Chronological notes feed (fatigue, form comments, deviations, anything logged in .notes)
+  const notesEntries = [...entries].reverse().filter(w => w.notes && w.notes.trim());
+  const notesHtml = notesEntries.length
+    ? `<div class="card"><div class="section-title">Notes over time</div><ul class="note-list">${notesEntries.map(w => `<li><span class="note-date">${w.date}</span>${escapeHtml(w.notes)}</li>`).join('')}</ul></div>`
+    : `<div class="card"><div class="section-title">Notes over time</div><div class="section-sub">Nothing logged yet. Mention how a workout felt — soreness, fatigue, form issues — and it'll show up here.</div></div>`;
+
+  slot.innerHTML = (exerciseHtml || '<div class="card"><div class="chart-empty">No weighted exercises logged yet.</div></div>') + notesHtml;
 }
 
 async function boot() {
@@ -351,9 +463,11 @@ async function boot() {
 
   renderStats();
   renderTables();
+  renderProgress();
   setView('day');
 
   document.querySelectorAll('.filter-btn').forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
+  document.querySelectorAll('.tab-btn').forEach(b => b.addEventListener('click', () => setTab(b.dataset.tab)));
 }
 
 boot();
