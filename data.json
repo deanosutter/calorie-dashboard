@@ -5,9 +5,54 @@
     "daily_protein_goal_g": 170,
     "timezone": "UTC",
     "last_watch_sync": null,
-    "notes": "daily_calorie_goal and daily_protein_goal_g are optional — set them by telling Claude e.g. 'set my daily calorie goal to 2200' or 'set my protein goal to 160'. protein_goal was set using a bodyweight-based heuristic (0.8-1g per lb) for lifting-while-in-a-deficit, at ~189lb — recalculate if bodyweight changes meaningfully. timezone controls how dates/times are stamped on entries — tell Claude your timezone to set it once."
+    "notes": "daily_calorie_goal and daily_protein_goal_g are optional \u2014 set them by telling Claude e.g. 'set my daily calorie goal to 2200' or 'set my protein goal to 160'. protein_goal was set using a bodyweight-based heuristic (0.8-1g per lb) for lifting-while-in-a-deficit, at ~189lb \u2014 recalculate if bodyweight changes meaningfully. timezone controls how dates/times are stamped on entries \u2014 tell Claude your timezone to set it once."
   },
-  "recipes": [],
+  "recipes": [
+    {
+      "id": "sausage-egg-casserole-square",
+      "name": "Sausage egg casserole (1 square)",
+      "match_phrases": [
+        "egg casserole square",
+        "sausage egg casserole square",
+        "square of egg casserole",
+        "square of the egg casserole",
+        "casserole square"
+      ],
+      "unit": "square",
+      "calories_per_unit": 155,
+      "protein_g_per_unit": 10.5,
+      "notes": "Full casserole (~2,500 cal) cut into 16 equal squares. Ingredients: 10 XL eggs, 1 lb breakfast sausage, 1/2 cup plain nonfat Greek yogurt, 3/4 cup shredded cheese, 1.5 cups frozen bell peppers, 2-4 tbsp pickled jalapenos, 3 cloves garlic, 1/2 tsp butter. Per square: ~11-12g fat, ~2g carbs.",
+      "created": "2026-08-10"
+    },
+    {
+      "id": "tj-teeny-tiny-avocado",
+      "name": "Trader Joe's Teeny Tiny Avocado (1 whole)",
+      "match_phrases": [
+        "teeny tiny avocado",
+        "tiny avocado",
+        "trader joe's tiny avocado",
+        "trader joes tiny avocado"
+      ],
+      "unit": "avocado",
+      "calories_per_unit": 120,
+      "protein_g_per_unit": 1.5,
+      "notes": "Per whole tiny avocado: ~11g fat, ~6g carbs, ~5g fiber.",
+      "created": "2026-08-10"
+    },
+    {
+      "id": "egg-casserole-lunch",
+      "name": "Egg casserole for lunch (standard)",
+      "match_phrases": [
+        "egg casserole for lunch",
+        "standard egg casserole lunch"
+      ],
+      "unit": "lunch",
+      "calories_per_unit": 585,
+      "protein_g_per_unit": 33,
+      "notes": "Shortcut = 3 sausage egg casserole squares (465 cal, 31.5g protein) + 1 Trader Joe's Teeny Tiny Avocado (120 cal, 1.5g protein). Approx macros: ~46g fat, ~12g carbs, ~5-6g fiber. Unless Deano specifies otherwise, 'egg casserole for lunch' always means this exact combo.",
+      "created": "2026-08-10"
+    }
+  ],
   "food_entries": [
     {
       "date": "2026-08-10",
