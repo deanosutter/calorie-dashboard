@@ -179,9 +179,17 @@ const TEMPLATE = `
       <div class="tab-panel" id="tab-library">
         <div class="card">
           <div class="section-title">Saved recipes</div>
-          <div class="section-sub">Reference only — Claude uses these automatically when you log food that matches.</div>
-          <table><thead><tr><th>Name</th><th>Unit</th><th>Calories / unit</th><th>Protein / unit</th></tr></thead>
-            <tbody id="recipe-table"><tr class="empty-row"><td colspan="4">No recipes saved yet — they get added automatically the first time you log something and confirm you want it remembered.</td></tr></tbody>
+          <div class="section-sub">Full ingredient breakdown. Claude uses these to recompute on the fly when you mention a change (fewer squares, a swapped or omitted ingredient, a half batch, etc.).</div>
+          <table><thead><tr><th>Name</th><th>Ingredients</th><th>Per unit</th></tr></thead>
+            <tbody id="recipe-table"><tr class="empty-row"><td colspan="3">No recipes saved yet — they get added automatically the first time you log something and confirm you want it remembered.</td></tr></tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <div class="section-title">Saved meals</div>
+          <div class="section-sub">Quick-log shortcuts built from one or more saved recipes. Claude uses the cached total unless you mention a change, in which case it recomputes from the component recipes.</div>
+          <table><thead><tr><th>Name</th><th>Made of</th><th>Calories</th><th>Protein</th></tr></thead>
+            <tbody id="meal-table"><tr class="empty-row"><td colspan="4">No saved meals yet.</td></tr></tbody>
           </table>
         </div>
 
@@ -378,9 +386,27 @@ function renderTables() {
     workoutBody.innerHTML = rows.map(w => `<tr><td>${w.date}</td><td>${escapeHtml(w.routine_name || 'One-off')}</td><td>${w.duration_min ? w.duration_min + ' min' : '—'}</td><td>${w.calories_burned || '—'}</td><td>${escapeHtml(w.notes || '—')}</td></tr>`).join('');
   }
 
+  const recipeById = {};
+  DATA.recipes.forEach(r => { recipeById[r.id] = r; });
+
   const recipeBody = document.getElementById('recipe-table');
   if (DATA.recipes.length) {
-    recipeBody.innerHTML = DATA.recipes.map(r => `<tr><td>${escapeHtml(r.name)}</td><td>${escapeHtml(r.unit)}</td><td>${r.calories_per_unit}</td><td>${r.protein_g_per_unit != null ? r.protein_g_per_unit + 'g' : '—'}</td></tr>`).join('');
+    recipeBody.innerHTML = DATA.recipes.map(r => {
+      const ingredients = (r.ingredients || []).map(i => `${i.qty} ${escapeHtml(i.unit)} ${escapeHtml(i.name)} (${i.calories} cal${i.protein_g != null ? ', ' + i.protein_g + 'g' : ''})`).join('<br>');
+      const perUnit = `${r.calories_per_unit} cal${r.protein_g_per_unit != null ? ' / ' + r.protein_g_per_unit + 'g' : ''} per ${escapeHtml(r.unit)}`;
+      return `<tr><td>${escapeHtml(r.name)}</td><td>${ingredients || '—'}</td><td>${perUnit}</td></tr>`;
+    }).join('');
+  }
+
+  const mealBody = document.getElementById('meal-table');
+  if ((DATA.saved_meals || []).length) {
+    mealBody.innerHTML = DATA.saved_meals.map(m => {
+      const made = (m.components || []).map(c => {
+        const r = recipeById[c.recipe_id];
+        return `${c.qty} ${escapeHtml(c.unit)} ${escapeHtml(r ? r.name : c.recipe_id)}`;
+      }).join(' + ');
+      return `<tr><td>${escapeHtml(m.name)}</td><td>${made || '—'}</td><td>${Math.round(m.calories)}</td><td>${m.protein_g != null ? Math.round(m.protein_g) + 'g' : '—'}</td></tr>`;
+    }).join('');
   }
 
   const routineBody = document.getElementById('routine-table');

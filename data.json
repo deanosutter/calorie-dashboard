@@ -9,9 +9,11 @@
   },
   "recipes": [
     {
-      "id": "sausage-egg-casserole-square",
-      "name": "Sausage egg casserole (1 square)",
+      "id": "sausage-egg-casserole",
+      "name": "Sausage Egg Casserole",
       "match_phrases": [
+        "sausage egg casserole",
+        "egg casserole",
         "egg casserole square",
         "sausage egg casserole square",
         "square of egg casserole",
@@ -19,14 +21,73 @@
         "casserole square"
       ],
       "unit": "square",
-      "calories_per_unit": 155,
-      "protein_g_per_unit": 10.5,
-      "notes": "Full casserole (~2,500 cal) cut into 16 equal squares. Ingredients: 10 XL eggs, 1 lb breakfast sausage, 1/2 cup plain nonfat Greek yogurt, 3/4 cup shredded cheese, 1.5 cups frozen bell peppers, 2-4 tbsp pickled jalapenos, 3 cloves garlic, 1/2 tsp butter. Per square: ~11-12g fat, ~2g carbs.",
+      "yield_qty": 16,
+      "ingredients": [
+        {
+          "name": "Extra-large eggs",
+          "qty": 10,
+          "unit": "egg",
+          "calories": 800,
+          "protein_g": 68
+        },
+        {
+          "name": "Breakfast sausage",
+          "qty": 1,
+          "unit": "lb",
+          "calories": 1200,
+          "protein_g": 60
+        },
+        {
+          "name": "Plain nonfat Greek yogurt",
+          "qty": 0.5,
+          "unit": "cup",
+          "calories": 70,
+          "protein_g": 12
+        },
+        {
+          "name": "Shredded cheese",
+          "qty": 0.75,
+          "unit": "cup",
+          "calories": 330,
+          "protein_g": 21
+        },
+        {
+          "name": "Frozen bell peppers",
+          "qty": 1.5,
+          "unit": "cup",
+          "calories": 60,
+          "protein_g": 2
+        },
+        {
+          "name": "Pickled jalapenos",
+          "qty": 3,
+          "unit": "tbsp",
+          "calories": 10,
+          "protein_g": 0
+        },
+        {
+          "name": "Fresh garlic",
+          "qty": 3,
+          "unit": "clove",
+          "calories": 15,
+          "protein_g": 0.5
+        },
+        {
+          "name": "Butter (greasing dish)",
+          "qty": 0.5,
+          "unit": "tsp",
+          "calories": 17,
+          "protein_g": 0
+        }
+      ],
+      "calories_per_unit": 156,
+      "protein_g_per_unit": 10.2,
+      "notes": "Whole casserole ~2,502 cal / ~163.5g protein total, cut into 16 equal squares. Per square also ~11-12g fat, ~2g carbs. If Deano mentions any deviation when logging (fewer/more squares, an omitted or swapped ingredient, a half batch, etc.), recompute from the ingredients list above instead of using the cached per-unit numbers, then log the recomputed total. Only overwrite ingredients/calories_per_unit here if he says the change is permanent to the recipe itself.",
       "created": "2026-08-10"
     },
     {
       "id": "tj-teeny-tiny-avocado",
-      "name": "Trader Joe's Teeny Tiny Avocado (1 whole)",
+      "name": "Trader Joe's Teeny Tiny Avocado",
       "match_phrases": [
         "teeny tiny avocado",
         "tiny avocado",
@@ -34,22 +95,19 @@
         "trader joes tiny avocado"
       ],
       "unit": "avocado",
+      "yield_qty": 1,
+      "ingredients": [
+        {
+          "name": "Trader Joe's Teeny Tiny Avocado",
+          "qty": 1,
+          "unit": "avocado",
+          "calories": 120,
+          "protein_g": 1.5
+        }
+      ],
       "calories_per_unit": 120,
       "protein_g_per_unit": 1.5,
-      "notes": "Per whole tiny avocado: ~11g fat, ~6g carbs, ~5g fiber.",
-      "created": "2026-08-10"
-    },
-    {
-      "id": "egg-casserole-lunch",
-      "name": "Egg casserole for lunch (standard)",
-      "match_phrases": [
-        "egg casserole for lunch",
-        "standard egg casserole lunch"
-      ],
-      "unit": "lunch",
-      "calories_per_unit": 585,
-      "protein_g_per_unit": 33,
-      "notes": "Shortcut = 3 sausage egg casserole squares (465 cal, 31.5g protein) + 1 Trader Joe's Teeny Tiny Avocado (120 cal, 1.5g protein). Approx macros: ~46g fat, ~12g carbs, ~5-6g fiber. Unless Deano specifies otherwise, 'egg casserole for lunch' always means this exact combo.",
+      "notes": "~11g fat, ~6g carbs, ~5g fiber per whole avocado. Fractional amounts (e.g. 'half a tiny avocado') scale linearly: half = 60 cal / 0.75g protein.",
       "created": "2026-08-10"
     }
   ],
@@ -84,6 +142,32 @@
       "unit": "lb",
       "source": "reported",
       "notes": "Approximate, from phone/scale sync as of the day before this was logged."
+    }
+  ],
+  "saved_meals": [
+    {
+      "id": "egg-casserole-lunch",
+      "name": "Egg casserole for lunch (standard)",
+      "match_phrases": [
+        "egg casserole for lunch",
+        "standard egg casserole lunch"
+      ],
+      "components": [
+        {
+          "recipe_id": "sausage-egg-casserole",
+          "qty": 3,
+          "unit": "square"
+        },
+        {
+          "recipe_id": "tj-teeny-tiny-avocado",
+          "qty": 1,
+          "unit": "avocado"
+        }
+      ],
+      "calories": 585,
+      "protein_g": 33,
+      "notes": "3 casserole squares + 1 tiny avocado. ~46g fat, ~12g carbs, ~5-6g fiber. If Deano says this lunch deviated (e.g. '2 squares instead of 3', 'no avocado today'), recompute from the component recipes above rather than using this cached total, and log the recomputed version instead \u2014 don't silently overwrite this saved meal unless he says to update it.",
+      "created": "2026-08-10"
     }
   ]
 }
