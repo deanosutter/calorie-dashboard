@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calorie & Workout Tracker</title>
+<style>
+  .viz-root {
+    color-scheme: light;
+    --surface-1:      #fcfcfb;
+    --page-plane:     #f9f9f7;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --gridline:       #e1e0d9;
+    --baseline:       #c3c2b7;
+    --border:         rgba(11,11,11,0.10);
+    --series-1:       #2a78d6;
+    --series-1-wash:  rgba(42,120,214,0.10);
+    --status-good:    #0ca30c;
+    --status-critical:#d03b3b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) .viz-root {
+      color-scheme: dark;
+      --surface-1:      #1a1a19;
+      --page-plane:     #0d0d0d;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --gridline:       #2c2c2a;
+      --baseline:       #383835;
+      --border:         rgba(255,255,255,0.10);
+      --series-1:       #3987e5;
+      --series-1-wash:  rgba(57,135,229,0.14);
+      --status-good:    #0ca30c;
+      --status-critical:#e66767;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--page-plane); color: var(--text-primary); }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 28px 20px 60px; }
+  header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 6px; }
+  h1 { font-size: 20px; font-weight: 600; margin: 0; }
+  .date-label { color: var(--text-secondary); font-size: 14px; }
+  .refresh-hint { color: var(--text-muted); font-size: 12px; margin-top: -12px; margin-bottom: 16px; }
+  .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 16px; position: relative; }
+  .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; }
+  .stat-tile { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-size: 13px; color: var(--text-secondary); }
+  .stat-value { font-size: 32px; font-weight: 600; font-variant-numeric: proportional-nums; color: var(--text-primary); }
+  .stat-sub { font-size: 12px; color: var(--text-muted); }
+  .stat-sub.good { color: var(--status-good); }
+  .stat-sub.critical { color: var(--status-critical); }
+  .section-title { font-size: 14px; font-weight: 600; color: var(--text-primary); margin: 0 0 4px 0; }
+  .section-sub { font-size: 12px; color: var(--text-muted); margin: 0 0 14px 0; }
+
+  .filter-row { display: flex; gap: 6px; margin-bottom: 16px; }
+  .filter-btn {
+    font: inherit; font-size: 13px; padding: 6px 14px; border-radius: 999px;
+    border: 1px solid var(--border); background: transparent; color: var(--text-secondary);
+    cursor: pointer;
+  }
+  .filter-btn:hover { background: var(--series-1-wash); }
+  .filter-btn.active { background: var(--series-1); color: #ffffff; border-color: var(--series-1); }
+
+  .chart-empty { display: flex; align-items: center; justify-content: center; height: 200px; color: var(--text-muted); font-size: 13px; text-align: center; line-height: 1.5; }
+
+  .bars { display: flex; align-items: flex-end; gap: 8px; height: 200px; padding-top: 10px; border-top: 1px solid var(--gridline); position: relative; }
+  .goal-line { position: absolute; left: 0; right: 0; border-top: 2px dashed var(--text-muted); }
+  .goal-line span { position: absolute; right: 0; top: -18px; font-size: 11px; color: var(--text-muted); background: var(--surface-1); padding-left: 4px; }
+  .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; gap: 6px; min-width: 8px; }
+  .bar { width: 22px; max-width: 24px; border-radius: 4px 4px 0 0; background: var(--series-1); position: relative; cursor: default; }
+  .bar.over { background: var(--status-critical); }
+  .bar-day { font-size: 11px; color: var(--text-muted); white-space: nowrap; }
+  .bar .tip, .pt .tip {
+    position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
+    background: var(--text-primary); color: var(--surface-1); font-size: 11px;
+    padding: 3px 7px; border-radius: 5px; white-space: nowrap; margin-bottom: 6px;
+    opacity: 0; pointer-events: none; transition: opacity .1s; font-variant-numeric: tabular-nums;
+  }
+  .bar:hover .tip, .pt:hover .tip { opacity: 1; }
+
+  .linechart { position: relative; height: 200px; border-top: 1px solid var(--gridline); padding-top: 10px; }
+  .linechart svg { width: 100%; height: 100%; overflow: visible; }
+  .pt { position: absolute; width: 24px; height: 24px; margin-left: -12px; margin-top: -12px; cursor: default; }
+  .pt::after { content: ''; position: absolute; left: 8px; top: 8px; width: 8px; height: 8px; border-radius: 50%; background: var(--series-1); border: 2px solid var(--surface-1); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; font-weight: 500; color: var(--text-muted); font-size: 12px; padding: 6px 8px; border-bottom: 1px solid var(--gridline); }
+  td { padding: 8px 8px; border-bottom: 1px solid var(--gridline); font-variant-numeric: tabular-nums; color: var(--text-primary); }
+  .empty-row td { color: var(--text-muted); font-variant-numeric: normal; }
+  .cmd-hint { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+  code { background: color-mix(in srgb, var(--text-muted) 14%, transparent); padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+  .load-state { text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 14px; }
+</style>
+</head>
+<body>
+  <div class="viz-root">
+    <div class="wrap" id="app">
+      <div class="load-state" id="load-state">Loading your data&hellip;</div>
+    </div>
+  </div>
+
+<script>
+const TEMPLATE = `
+      <header>
+        <h1>Calorie &amp; Workout Tracker</h1>
+        <span class="date-label" id="today-label"></span>
+      </header>
+      <div class="refresh-hint">Refresh this page any time to see your latest logged entries.</div>
+
+      <div class="card">
+        <div class="stat-row" id="stat-row"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Calories eaten</div>
+        <div class="section-sub" id="chart-sub">Last 7 days</div>
+        <div class="filter-row">
+          <button class="filter-btn active" data-view="day">Day</button>
+          <button class="filter-btn" data-view="week">Week</button>
+          <button class="filter-btn" data-view="month">Month</button>
+        </div>
+        <div id="chart-slot"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Recent food entries</div>
+        <table><thead><tr><th>Date</th><th>Item</th><th>Qty</th><th>Calories</th><th>Protein</th></tr></thead>
+          <tbody id="food-table"><tr class="empty-row"><td colspan="5">No food entries yet.</td></tr></tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Recent workouts</div>
+        <table><thead><tr><th>Date</th><th>Routine</th><th>Duration</th><th>Calories burned</th></tr></thead>
+          <tbody id="workout-table"><tr class="empty-row"><td colspan="4">No workouts logged yet.</td></tr></tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Saved recipes</div>
+        <table><thead><tr><th>Name</th><th>Unit</th><th>Calories / unit</th><th>Protein / unit</th></tr></thead>
+          <tbody id="recipe-table"><tr class="empty-row"><td colspan="4">No recipes saved yet — they get added automatically the first time you log something and confirm you want it remembered.</td></tr></tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Saved routines</div>
+        <table><thead><tr><th>Name</th><th>Exercises</th></tr></thead>
+          <tbody id="routine-table"><tr class="empty-row"><td colspan="2">No routines saved yet.</td></tr></tbody>
+        </table>
+        <div class="cmd-hint">Try: <code>log food: two squares of the lasagna</code> &middot; <code>did push day</code> &middot; <code>show my dashboard</code></div>
+      </div>
+`;
+
+function fmtDate(d) { return d.toISOString().slice(0,10); }
+function parseDate(s) { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); }
+function shortDay(d) { return d.toLocaleDateString(undefined, { weekday: 'short' }); }
+function shortDate(d) { return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' }); }
+function escapeHtml(s) { const d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }
+
+let DATA = null;
+let today, todayStr, goal, proteinGoal;
+const caloriesByDate = {}, proteinByDate = {};
+
+function rangeDates(days) {
+  const out = [];
+  for (let i = days - 1; i >= 0; i--) {
+    const d = new Date(today); d.setDate(d.getDate() - i);
+    out.push(d);
+  }
+  return out;
+}
+
+function renderStats() {
+  const todayCal = caloriesByDate[todayStr] || 0;
+  const todayProtein = proteinByDate[todayStr] || 0;
+  const weekDates = rangeDates(7).map(fmtDate);
+  const workoutsThisWeek = DATA.workout_entries.filter(w => weekDates.includes(w.date)).length;
+
+  let goalHtml = '<span class="stat-value">—</span><span class="stat-sub">Say "set my daily calorie goal to X"</span>';
+  if (goal) {
+    const diff = goal - todayCal;
+    const cls = diff >= 0 ? 'good' : 'critical';
+    const msg = diff >= 0 ? `${diff} cal remaining` : `${Math.abs(diff)} cal over`;
+    goalHtml = `<span class="stat-value">${goal.toLocaleString()}</span><span class="stat-sub ${cls}">${msg}</span>`;
+  }
+
+  let proteinGoalHtml = '<span class="stat-value">—</span><span class="stat-sub">Say "set my protein goal to X"</span>';
+  if (proteinGoal) {
+    const diff = proteinGoal - todayProtein;
+    const cls = diff <= 0 ? 'good' : (todayProtein > 0 ? '' : 'critical');
+    const msg = diff > 0 ? `${diff}g to go` : 'Goal met';
+    proteinGoalHtml = `<span class="stat-value">${proteinGoal}g</span><span class="stat-sub ${cls}">${msg}</span>`;
+  }
+
+  document.getElementById('stat-row').innerHTML = `
+    <div class="stat-tile">
+      <span class="stat-label">Calories today</span>
+      <span class="stat-value">${todayCal.toLocaleString()}</span>
+      <span class="stat-sub">${DATA.food_entries.length ? DATA.food_entries.filter(e=>e.date===todayStr).length + ' entries logged' : 'No entries logged yet'}</span>
+    </div>
+    <div class="stat-tile">
+      <span class="stat-label">Calorie goal</span>
+      ${goalHtml}
+    </div>
+    <div class="stat-tile">
+      <span class="stat-label">Protein today</span>
+      <span class="stat-value">${todayProtein}g</span>
+      <span class="stat-sub">${todayProtein ? 'Logged today' : 'No protein logged yet'}</span>
+    </div>
+    <div class="stat-tile">
+      <span class="stat-label">Protein goal</span>
+      ${proteinGoalHtml}
+    </div>
+    <div class="stat-tile">
+      <span class="stat-label">Workouts this week</span>
+      <span class="stat-value">${workoutsThisWeek}</span>
+      <span class="stat-sub">${workoutsThisWeek ? 'Logged this week' : 'No workouts logged yet'}</span>
+    </div>
+  `;
+}
+
+function maxWithGoal(values) {
+  const m = Math.max(1, ...values, goal || 0);
+  return m * 1.15;
+}
+
+function renderDayView() {
+  const entries = DATA.food_entries.filter(e => e.date === todayStr);
+  document.getElementById('chart-sub').textContent = "Today's meals";
+  const slot = document.getElementById('chart-slot');
+  if (!entries.length) {
+    slot.innerHTML = '<div class="chart-empty">Nothing logged today yet.<br>Say &ldquo;log food&rdquo; to add your first entry.</div>';
+    return;
+  }
+  let rows = entries.map(e => `<tr><td>${e.time || ''}</td><td>${escapeHtml(e.item)}</td><td>${e.quantity || ''} ${escapeHtml(e.unit || '')}</td><td>${Math.round(e.calories)}</td><td>${e.protein_g != null ? Math.round(e.protein_g) + 'g' : '—'}</td></tr>`).join('');
+  slot.innerHTML = `<table><thead><tr><th>Time</th><th>Item</th><th>Qty</th><th>Calories</th><th>Protein</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+function renderWeekView() {
+  const dates = rangeDates(7);
+  const values = dates.map(d => caloriesByDate[fmtDate(d)] || 0);
+  document.getElementById('chart-sub').textContent = 'Last 7 days';
+  const slot = document.getElementById('chart-slot');
+  if (!DATA.food_entries.length) {
+    slot.innerHTML = '<div class="chart-empty">Nothing logged yet.<br>Say &ldquo;log food&rdquo; to add your first entry.</div>';
+    return;
+  }
+  const max = maxWithGoal(values);
+  const goalPct = goal ? Math.min(100, (goal / max) * 100) : null;
+  let bars = dates.map((d, i) => {
+    const v = values[i];
+    const h = Math.round((v / max) * 100);
+    const over = goal && v > goal;
+    return `<div class="bar-col">
+      <div class="bar ${over ? 'over' : ''}" style="height:${h}%"><span class="tip">${shortDate(d)}: ${v.toLocaleString()} cal</span></div>
+      <span class="bar-day">${shortDay(d)}</span>
+    </div>`;
+  }).join('');
+  slot.innerHTML = `<div class="bars">
+    ${goalPct !== null ? `<div class="goal-line" style="bottom:${goalPct}%"><span>Goal ${goal.toLocaleString()}</span></div>` : ''}
+    ${bars}
+  </div>`;
+}
+
+function renderMonthView() {
+  const dates = rangeDates(30);
+  const values = dates.map(d => caloriesByDate[fmtDate(d)] || 0);
+  document.getElementById('chart-sub').textContent = 'Last 30 days';
+  const slot = document.getElementById('chart-slot');
+  if (!DATA.food_entries.length) {
+    slot.innerHTML = '<div class="chart-empty">Nothing logged yet.<br>Say &ldquo;log food&rdquo; to add your first entry.</div>';
+    return;
+  }
+  const max = maxWithGoal(values);
+  const W = 600, H = 180;
+  const stepX = W / (values.length - 1);
+  const pts = values.map((v, i) => [i * stepX, H - (v / max) * H]);
+  const path = pts.map((p, i) => (i === 0 ? 'M' : 'L') + p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' ');
+  const goalY = goal ? H - Math.min(1, goal / max) * H : null;
+  let dots = pts.map((p, i) => {
+    const pct = (p[0] / W) * 100, topPct = (p[1] / H) * 100;
+    return `<div class="pt" style="left:${pct}%; top:${topPct}%"><span class="tip">${shortDate(dates[i])}: ${values[i].toLocaleString()} cal</span></div>`;
+  }).join('');
+  slot.innerHTML = `<div class="linechart">
+    <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+      ${goalY !== null ? `<line x1="0" y1="${goalY}" x2="${W}" y2="${goalY}" stroke="var(--text-muted)" stroke-width="2" stroke-dasharray="4 4" />` : ''}
+      <path d="${path}" fill="none" stroke="var(--series-1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+    </svg>
+    ${dots}
+  </div>`;
+}
+
+const renderers = { day: renderDayView, week: renderWeekView, month: renderMonthView };
+function setView(view) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.view === view));
+  renderers[view]();
+}
+
+function renderTables() {
+  const foodBody = document.getElementById('food-table');
+  if (DATA.food_entries.length) {
+    const rows = [...DATA.food_entries].sort((a,b) => (b.date+b.time).localeCompare(a.date+a.time)).slice(0, 10);
+    foodBody.innerHTML = rows.map(e => `<tr><td>${e.date}</td><td>${escapeHtml(e.item)}</td><td>${e.quantity || ''} ${escapeHtml(e.unit || '')}</td><td>${Math.round(e.calories)}</td><td>${e.protein_g != null ? Math.round(e.protein_g) + 'g' : '—'}</td></tr>`).join('');
+  }
+
+  const workoutBody = document.getElementById('workout-table');
+  if (DATA.workout_entries.length) {
+    const rows = [...DATA.workout_entries].sort((a,b) => (b.date+(b.time||'')).localeCompare(a.date+(a.time||''))).slice(0, 10);
+    workoutBody.innerHTML = rows.map(w => `<tr><td>${w.date}</td><td>${escapeHtml(w.routine_name || 'One-off')}</td><td>${w.duration_min ? w.duration_min + ' min' : '—'}</td><td>${w.calories_burned || '—'}</td></tr>`).join('');
+  }
+
+  const recipeBody = document.getElementById('recipe-table');
+  if (DATA.recipes.length) {
+    recipeBody.innerHTML = DATA.recipes.map(r => `<tr><td>${escapeHtml(r.name)}</td><td>${escapeHtml(r.unit)}</td><td>${r.calories_per_unit}</td><td>${r.protein_g_per_unit != null ? r.protein_g_per_unit + 'g' : '—'}</td></tr>`).join('');
+  }
+
+  const routineBody = document.getElementById('routine-table');
+  if (DATA.routines.length) {
+    routineBody.innerHTML = DATA.routines.map(r => `<tr><td>${escapeHtml(r.name)}</td><td>${r.exercises.map(e => escapeHtml(e.name)).join(', ')}</td></tr>`).join('');
+  }
+}
+
+async function boot() {
+  try {
+    const res = await fetch('./data.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    DATA = await res.json();
+  } catch (err) {
+    document.getElementById('app').innerHTML = '<div class="load-state">Couldn’t load data.json (' + escapeHtml(err.message) + '). Refresh to retry.</div>';
+    return;
+  }
+
+  document.getElementById('app').innerHTML = TEMPLATE;
+
+  today = new Date();
+  today.setHours(0,0,0,0);
+  todayStr = fmtDate(today);
+  document.getElementById('today-label').textContent = today.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+  goal = DATA.settings.daily_calorie_goal;
+  proteinGoal = DATA.settings.daily_protein_goal_g;
+
+  DATA.food_entries.forEach(e => {
+    caloriesByDate[e.date] = (caloriesByDate[e.date] || 0) + Number(e.calories || 0);
+    if (e.protein_g != null) proteinByDate[e.date] = (proteinByDate[e.date] || 0) + Number(e.protein_g || 0);
+  });
+
+  renderStats();
+  renderTables();
+  setView('day');
+
+  document.querySelectorAll('.filter-btn').forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
+}
+
+boot();
+</script>
+</body>
+</html>
