@@ -282,6 +282,23 @@
       "protein_g_per_unit": 0,
       "notes": "User-provided recipe. Approximate batch total 2,800 calories; approximately 230-235 calories per 1/2 cup. Ingredients: 3 cups rolled oats; 1/2 cup almonds; 3 tbsp chia seeds; 2 tbsp ground flaxseed; 1/4 cup unsweetened coconut; 3/4 tsp salt; 1 1/2 tsp cinnamon; 1/2 tsp ginger; 1/4 tsp pumpkin pie spice; pinch nutmeg; 1/2 cup natural peanut butter; 1/3 cup honey; 2 tsp vanilla extract.",
       "created": "2026-08-10"
+    },
+    {
+      "id": "thin-greek-yogurt-pepperoni-veggie-pizza",
+      "name": "Thin Greek Yogurt Pepperoni & Veggie Pizza",
+      "match_phrases": [
+        "thin greek yogurt pepperoni veggie pizza",
+        "greek yogurt pepperoni veggie pizza",
+        "homemade greek yogurt pizza",
+        "pepperoni veggie pizza"
+      ],
+      "unit": "whole pizza",
+      "yield_qty": 1,
+      "ingredients": [],
+      "calories_per_unit": 1634,
+      "protein_g_per_unit": 85,
+      "notes": "User-provided recipe for a 14–15 inch pizza on a 16-inch perforated pan. Estimated whole pizza: ~1,634 calories and ~80–90g protein. Ingredients: Greek yogurt dough with 1 cup all-purpose flour, 1 cup plain nonfat Greek yogurt, baking powder, salt, garlic powder, Italian seasoning, 1 tbsp Parmesan, 1/2 tbsp olive oil, and 1 tsp honey; toppings of 1/3 cup pizza sauce, 6 oz shredded mozzarella, 2 oz pepperoni, 1 cup frozen mixed peppers/onions/vegetables, 1–2 jalapeños, and 2 cloves garlic; crust finish of 1 tsp olive oil, 1 tbsp Parmesan, and garlic powder. Estimated half pizza: ~817 calories and ~40–45g protein. Replace estimates with exact label data and actual weights when available.",
+      "created": "2026-08-11"
     }
   ],
   "food_entries": [
@@ -344,6 +361,16 @@
       "calories": 420,
       "protein_g": 5.5,
       "source": "mixed_saved_and_estimated"
+    },
+    {
+      "date": "2026-08-11",
+      "time": "12:00",
+      "item": "Thin Greek Yogurt Pepperoni & Veggie Pizza (half pizza)",
+      "quantity": 0.5,
+      "unit": "whole pizza",
+      "calories": 817,
+      "protein_g": 42.5,
+      "source": "saved recipe estimate"
     }
   ],
   "routines": [],
