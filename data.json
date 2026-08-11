@@ -8,182 +8,27 @@
     "notes": "daily_calorie_goal and daily_protein_goal_g are optional — set them by telling Claude e.g. 'set my daily calorie goal to 2200' or 'set my protein goal to 160'. protein_goal was set using a bodyweight-based heuristic (0.8-1g per lb) for lifting-while-in-a-deficit, at ~189lb — recalculate if bodyweight changes meaningfully. timezone controls how dates/times are stamped on entries — tell Claude your timezone to set it once."
   },
   "food_items": [
-    {
-      "id": "extra-large-egg",
-      "name": "Extra-large egg",
-      "match_phrases": ["extra large egg", "extra-large egg", "large egg", "egg"],
-      "unit": "egg",
-      "calories_per_unit": 80,
-      "protein_g_per_unit": 6.8,
-      "notes": "",
-      "created": "2026-08-10"
-    },
-    {
-      "id": "breakfast-sausage",
-      "name": "Breakfast sausage",
-      "match_phrases": ["breakfast sausage", "sausage"],
-      "unit": "lb",
-      "calories_per_unit": 1200,
-      "protein_g_per_unit": 60,
-      "notes": "",
-      "created": "2026-08-10"
-    },
-    {
-      "id": "plain-nonfat-greek-yogurt",
-      "name": "Plain nonfat Greek yogurt",
-      "match_phrases": ["plain nonfat greek yogurt", "nonfat greek yogurt", "greek yogurt"],
-      "unit": "cup",
-      "calories_per_unit": 140,
-      "protein_g_per_unit": 24,
-      "notes": "",
-      "created": "2026-08-10"
-    },
-    {
-      "id": "shredded-cheese",
-      "name": "Shredded cheese",
-      "match_phrases": ["shredded cheese", "cheese"],
-      "unit": "cup",
-      "calories_per_unit": 440,
-      "protein_g_per_unit": 28,
-      "notes": "",
-      "created": "2026-08-10"
-    },
-    {
-      "id": "frozen-bell-peppers",
-      "name": "Frozen bell peppers",
-      "match_phrases": ["frozen bell peppers", "bell peppers"],
-      "unit": "cup",
-      "calories_per_unit": 40,
-      "protein_g_per_unit": 1.33,
-      "notes": "",
-      "created": "2026-08-10"
-    },
-    {
-      "id": "pickled-jalapenos",
-      "name": "Pickled jalapenos",
-      "match_phrases": ["pickled jalapenos", "jalapenos"],
-      "unit": "tbsp",
-      "calories_per_unit": 3.33,
-      "protein_g_per_unit": 0,
-      "notes": "",
-      "created": "2026-08-10"
-    },
-    {
-      "id": "fresh-garlic",
-      "name": "Fresh garlic",
-      "match_phrases": ["fresh garlic", "garlic", "garlic clove"],
-      "unit": "clove",
-      "calories_per_unit": 5,
-      "protein_g_per_unit": 0.17,
-      "notes": "",
-      "created": "2026-08-10"
-    },
-    {
-      "id": "butter",
-      "name": "Butter",
-      "match_phrases": ["butter"],
-      "unit": "tsp",
-      "calories_per_unit": 34,
-      "protein_g_per_unit": 0,
-      "notes": "",
-      "created": "2026-08-10"
-    },
-    {
-      "id": "tj-teeny-tiny-avocado",
-      "name": "Trader Joe's Teeny Tiny Avocado",
-      "match_phrases": [
-        "teeny tiny avocado",
-        "tiny avocado",
-        "trader joe's tiny avocado",
-        "trader joes tiny avocado"
-      ],
-      "unit": "avocado",
-      "calories_per_unit": 120,
-      "protein_g_per_unit": 1.5,
-      "notes": "~11g fat, ~6g carbs, ~5g fiber per whole avocado. Fractional amounts (e.g. 'half a tiny avocado') scale linearly: half = 60 cal / 0.75g protein.",
-      "created": "2026-08-10"
-    }
+    {"id":"extra-large-egg","name":"Extra-large egg","match_phrases":["extra large egg","extra-large egg","large egg","egg"],"unit":"egg","calories_per_unit":80,"protein_g_per_unit":6.8,"notes":"","created":"2026-08-10"},
+    {"id":"breakfast-sausage","name":"Breakfast sausage","match_phrases":["breakfast sausage","sausage"],"unit":"lb","calories_per_unit":1200,"protein_g_per_unit":60,"notes":"","created":"2026-08-10"},
+    {"id":"plain-nonfat-greek-yogurt","name":"Plain nonfat Greek yogurt","match_phrases":["plain nonfat greek yogurt","nonfat greek yogurt","greek yogurt"],"unit":"cup","calories_per_unit":140,"protein_g_per_unit":24,"notes":"","created":"2026-08-10"},
+    {"id":"shredded-cheese","name":"Shredded cheese","match_phrases":["shredded cheese","cheese"],"unit":"cup","calories_per_unit":440,"protein_g_per_unit":28,"notes":"","created":"2026-08-10"},
+    {"id":"frozen-bell-peppers","name":"Frozen bell peppers","match_phrases":["frozen bell peppers","bell peppers"],"unit":"cup","calories_per_unit":40,"protein_g_per_unit":1.33,"notes":"","created":"2026-08-10"},
+    {"id":"pickled-jalapenos","name":"Pickled jalapenos","match_phrases":["pickled jalapenos","jalapenos"],"unit":"tbsp","calories_per_unit":3.33,"protein_g_per_unit":0,"notes":"","created":"2026-08-10"},
+    {"id":"fresh-garlic","name":"Fresh garlic","match_phrases":["fresh garlic","garlic","garlic clove"],"unit":"clove","calories_per_unit":5,"protein_g_per_unit":0.17,"notes":"","created":"2026-08-10"},
+    {"id":"butter","name":"Butter","match_phrases":["butter"],"unit":"tsp","calories_per_unit":34,"protein_g_per_unit":0,"notes":"","created":"2026-08-10"},
+    {"id":"tj-teeny-tiny-avocado","name":"Trader Joe's Teeny Tiny Avocado","match_phrases":["teeny tiny avocado","tiny avocado","trader joe's tiny avocado","trader joes tiny avocado"],"unit":"avocado","calories_per_unit":120,"protein_g_per_unit":1.5,"notes":"~11g fat, ~6g carbs, ~5g fiber per whole avocado. Fractional amounts (e.g. 'half a tiny avocado') scale linearly: half = 60 cal / 0.75g protein.","created":"2026-08-10"}
   ],
   "recipes": [
-    {
-      "id": "sausage-egg-casserole",
-      "name": "Sausage Egg Casserole",
-      "match_phrases": [
-        "sausage egg casserole",
-        "egg casserole",
-        "egg casserole square",
-        "sausage egg casserole square",
-        "square of egg casserole",
-        "square of the egg casserole",
-        "casserole square"
-      ],
-      "unit": "square",
-      "yield_qty": 16,
-      "ingredients": [
-        {"food_item_id": "extra-large-egg", "qty": 10, "unit": "egg"},
-        {"food_item_id": "breakfast-sausage", "qty": 1, "unit": "lb"},
-        {"food_item_id": "plain-nonfat-greek-yogurt", "qty": 0.5, "unit": "cup"},
-        {"food_item_id": "shredded-cheese", "qty": 0.75, "unit": "cup"},
-        {"food_item_id": "frozen-bell-peppers", "qty": 1.5, "unit": "cup"},
-        {"food_item_id": "pickled-jalapenos", "qty": 3, "unit": "tbsp"},
-        {"food_item_id": "fresh-garlic", "qty": 3, "unit": "clove"},
-        {"food_item_id": "butter", "qty": 0.5, "unit": "tsp"}
-      ],
-      "calories_per_unit": 156,
-      "protein_g_per_unit": 10.2,
-      "notes": "Whole casserole ~2,502 cal / ~163.5g protein total, cut into 16 equal squares. Per square also ~11-12g fat, ~2g carbs. If Deano mentions any deviation when logging (fewer/more squares, an omitted or swapped ingredient, a half batch, etc.), recompute from the ingredients list above (looking up each food_item's calories/protein per unit) instead of using the cached per-unit numbers, then log the recomputed total. Only overwrite ingredients/calories_per_unit here if he says the change is permanent to the recipe itself.",
-      "created": "2026-08-10"
-    }
+    {"id":"sausage-egg-casserole","name":"Sausage Egg Casserole","match_phrases":["sausage egg casserole","egg casserole","egg casserole square","sausage egg casserole square","square of egg casserole","square of the egg casserole","casserole square"],"unit":"square","yield_qty":16,"ingredients":[{"food_item_id":"extra-large-egg","qty":10,"unit":"egg"},{"food_item_id":"breakfast-sausage","qty":1,"unit":"lb"},{"food_item_id":"plain-nonfat-greek-yogurt","qty":0.5,"unit":"cup"},{"food_item_id":"shredded-cheese","qty":0.75,"unit":"cup"},{"food_item_id":"frozen-bell-peppers","qty":1.5,"unit":"cup"},{"food_item_id":"pickled-jalapenos","qty":3,"unit":"tbsp"},{"food_item_id":"fresh-garlic","qty":3,"unit":"clove"},{"food_item_id":"butter","qty":0.5,"unit":"tsp"}],"calories_per_unit":156,"protein_g_per_unit":10.2,"notes":"Whole casserole ~2,502 cal / ~163.5g protein total, cut into 16 equal squares. Per square also ~11-12g fat, ~2g carbs. If Deano mentions any deviation when logging (fewer/more squares, an omitted or swapped ingredient, a half batch, etc.), recompute from the ingredients list above (looking up each food_item's calories/protein per unit) instead of using the cached per-unit numbers, then log the recomputed total. Only overwrite ingredients/calories_per_unit here if he says the change is permanent to the recipe itself.","created":"2026-08-10"}
   ],
   "food_entries": [
-    {
-      "date": "2026-08-10",
-      "time": "08:00",
-      "item": "Cold brew coffee with 1/3 cup almond milk and cinnamon",
-      "quantity": 1,
-      "unit": "serving",
-      "calories": 15,
-      "protein_g": 0.3,
-      "source": "estimated"
-    },
-    {
-      "date": "2026-08-10",
-      "time": "08:00",
-      "item": "Celsius Wild Berry energy drink",
-      "quantity": 1,
-      "unit": "can",
-      "calories": 10,
-      "protein_g": 0,
-      "source": "estimated"
-    }
+    {"date":"2026-08-10","time":"08:00","item":"Cold brew coffee with 1/3 cup almond milk and cinnamon","quantity":1,"unit":"serving","calories":15,"protein_g":0.3,"source":"estimated"},
+    {"date":"2026-08-10","time":"08:00","item":"Celsius Wild Berry energy drink","quantity":1,"unit":"can","calories":10,"protein_g":0,"source":"estimated"}
   ],
   "routines": [],
   "workout_entries": [],
-  "weight_entries": [
-    {
-      "date": "2026-08-09",
-      "weight": 189,
-      "unit": "lb",
-      "source": "reported",
-      "notes": "Approximate, from phone/scale sync as of the day before this was logged."
-    }
-  ],
+  "weight_entries": [{"date":"2026-08-09","weight":189,"unit":"lb","source":"reported","notes":"Approximate, from phone/scale sync as of the day before this was logged."}],
   "meals": [
-    {
-      "id": "egg-casserole-lunch",
-      "name": "Egg casserole for lunch (standard)",
-      "match_phrases": [
-        "egg casserole for lunch",
-        "standard egg casserole lunch"
-      ],
-      "components": [
-        {"ref": "recipe", "id": "sausage-egg-casserole", "qty": 3, "unit": "square"},
-        {"ref": "food_item", "id": "tj-teeny-tiny-avocado", "qty": 1, "unit": "avocado"}
-      ],
-      "calories": 585,
-      "protein_g": 33,
-      "notes": "3 casserole squares + 1 tiny avocado. ~46g fat, ~12g carbs, ~5-6g fiber. If Deano says this lunch deviated (e.g. '2 squares instead of 3', 'no avocado today'), recompute from the components above rather than using this cached total, and log the recomputed version instead — don't silently overwrite this saved meal unless he says to update it.",
-      "created": "2026-08-10"
-    }
+    {"id":"egg-casserole-lunch","name":"Egg casserole for lunch (standard)","match_phrases":["egg casserole for lunch","standard egg casserole lunch"],"components":[{"ref":"recipe","id":"sausage-egg-casserole","qty":3,"unit":"square"},{"ref":"food_item","id":"tj-teeny-tiny-avocado","qty":1,"unit":"avocado"}],"calories":585,"protein_g":33,"notes":"3 casserole squares + 1 tiny avocado. ~46g fat, ~12g carbs, ~5-6g fiber. If Deano says this lunch deviated (e.g. '2 squares instead of 3', 'no avocado today'), recompute from the components above rather than using this cached total, and log the recomputed version instead — don't silently overwrite this saved meal unless he says to update it.","created":"2026-08-10"}
   ]
 }
