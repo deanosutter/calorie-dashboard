@@ -3,9 +3,8 @@
   "settings": {
     "daily_calorie_goal": 1500,
     "daily_protein_goal_g": 170,
-    "timezone": "UTC",
-    "last_watch_sync": null,
-    "notes": "daily_calorie_goal and daily_protein_goal_g are optional — set them by telling Claude e.g. 'set my daily calorie goal to 2200' or 'set my protein goal to 160'. protein_goal was set using a bodyweight-based heuristic (0.8-1g per lb) for lifting-while-in-a-deficit, at ~189lb — recalculate if bodyweight changes meaningfully. timezone controls how dates/times are stamped on entries — tell Claude your timezone to set it once."
+    "timezone": "America/Chicago",
+    "last_watch_sync": null
   },
   "food_items": [
     {"id":"extra-large-egg","name":"Extra-large egg","match_phrases":["extra large egg","extra-large egg","large egg","egg"],"unit":"egg","calories_per_unit":80,"protein_g_per_unit":6.8,"notes":"","created":"2026-08-10"},
