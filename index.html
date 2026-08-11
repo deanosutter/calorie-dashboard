@@ -222,7 +222,8 @@ const TEMPLATE = `
       </div>
 `;
 
-function fmtDate(d) { return d.toISOString().slice(0,10); }
+function fmtDate(d) { return [d.getFullYear(), String(d.getMonth()+1).padStart(2,'0'), String(d.getDate()).padStart(2,'0')].join('-'); }
+function chicagoToday() { return new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Chicago', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date()); }
 function parseDate(s) { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); }
 function shortDay(d) { return d.toLocaleDateString(undefined, { weekday: 'short' }); }
 function shortDate(d) { return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' }); }
@@ -588,9 +589,8 @@ async function boot() {
 
   document.getElementById('app').innerHTML = TEMPLATE;
 
-  today = new Date();
-  today.setHours(0,0,0,0);
-  todayStr = fmtDate(today);
+  todayStr = chicagoToday();
+  today = parseDate(todayStr);
   document.getElementById('today-label').textContent = today.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
   goal = DATA.settings.daily_calorie_goal;
