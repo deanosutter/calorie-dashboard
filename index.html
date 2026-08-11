@@ -579,7 +579,7 @@ function renderProgress() {
 
 async function boot() {
   try {
-    const res = await fetch('./data.json', { cache: 'no-store' });
+    const res = await fetch('./data.json?v=20260811-2', { cache: 'no-store' });
     if (!res.ok) throw new Error('HTTP ' + res.status);
     DATA = await res.json();
   } catch (err) {
@@ -612,5 +612,6 @@ async function boot() {
 
 boot();
 </script>
+<!-- Dashboard build: 2026-08-11-2 -->
 </body>
 </html>
