@@ -84,6 +84,17 @@
   .goal-line { position: absolute; left: 0; right: 0; border-top: 2px dashed var(--text-muted); }
   .goal-line span { position: absolute; right: 0; top: -18px; font-size: 11px; color: var(--text-muted); background: var(--surface-1); padding-left: 4px; }
   .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; gap: 6px; min-width: 8px; }
+  .chart-legend { display:flex; gap:18px; font-size:12px; color:var(--text-secondary); margin:0 0 8px; }
+  .legend-swatch { display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:5px; }
+  .intake-swatch { background:var(--series-1); } .burn-swatch { background:var(--series-2); }
+  .combo-chart { height:230px; position:relative; border-top:1px solid var(--gridline); padding-top:10px; }
+  .combo-bars, .burn-points { position:absolute; inset:10px 0 24px; display:flex; align-items:flex-end; gap:8px; z-index:1; }
+  .combo-bars .bar-col { height:100%; } .dual-bars { display:flex; align-items:flex-end; justify-content:center; gap:3px; height:100%; width:100%; }
+  .dual-bars .bar { width:16px; max-width:18px; } .intake-bar { background:var(--series-1); } .burn-bar { background:var(--series-2); opacity:.85; }
+  .combo-chart svg { position:absolute; inset:10px 0 24px; width:100%; height:calc(100% - 34px); z-index:2; pointer-events:none; }
+  .burn-points { z-index:3; pointer-events:none; } .burn-point { position:absolute; width:12px; height:12px; margin-left:-6px; margin-top:-6px; border-radius:50%; background:var(--series-2); border:2px solid var(--surface-1); pointer-events:auto; }
+  .burn-point .tip { bottom:100%; left:50%; transform:translateX(-50%); margin-bottom:6px; } .burn-point:hover .tip { opacity:1; }
+  .day-detail { margin-top:18px; } .day-empty-note { margin-top:14px; }
   .bar { width: 22px; max-width: 24px; border-radius: 4px 4px 0 0; background: var(--series-1); position: relative; cursor: default; }
   .bar.over { background: var(--status-critical); }
   .bar-day { font-size: 11px; color: var(--text-muted); white-space: nowrap; }
@@ -304,18 +315,26 @@ function maxWithGoal(values) {
   return m * 1.15;
 }
 
-function renderDayView() {
-  const entries = DATA.food_entries.filter(e => e.date === todayStr);
-  document.getElementById('chart-sub').textContent = "Today's meals";
-  const slot = document.getElementById('chart-slot');
-  if (!entries.length) {
-    slot.innerHTML = '<div class="chart-empty">Nothing logged today yet.<br>Say &ldquo;log food&rdquo; to add your first entry.</div>';
-    return;
-  }
-  let rows = entries.map(e => `<tr><td>${e.time || ''}</td><td>${escapeHtml(e.item)}</td><td>${e.quantity || ''} ${escapeHtml(e.unit || '')}</td><td>${Math.round(e.calories)}</td><td>${e.protein_g != null ? Math.round(e.protein_g) + 'g' : '—'}</td></tr>`).join('');
-  slot.innerHTML = `<table><thead><tr><th>Time</th><th>Item</th><th>Qty</th><th>Calories</th><th>Protein</th></tr></thead><tbody>${rows}</tbody></table>`;
+function caloriesBurnedForDate(dateStr) {
+  return DATA.workout_entries.filter(w => w.date === dateStr).reduce((sum, w) => sum + Number(w.calories_burned ?? w.cal_burned ?? w.active_calories ?? w.activeCalories ?? 0), 0);
 }
 
+function renderDayView() {
+  const dates = rangeDates(7);
+  const entries = DATA.food_entries.filter(e => e.date === todayStr);
+  document.getElementById('chart-sub').textContent = 'Last 7 days — intake bars and burn line';
+  const values = dates.map(d => caloriesByDate[fmtDate(d)] || 0);
+  const burned = dates.map(d => caloriesBurnedForDate(fmtDate(d)));
+  const max = Math.max(1, ...values, ...burned, goal || 0) * 1.15;
+  const bars = dates.map((d,i) => '<div class="bar-col"><div class="dual-bars"><div class="bar intake-bar" style="height:' + Math.round(values[i]/max*100) + '%"><span class="tip">' + shortDate(d) + ': ' + values[i].toLocaleString() + ' cal eaten</span></div><div class="bar burn-bar" style="height:' + Math.round(burned[i]/max*100) + '%"><span class="tip">' + shortDate(d) + ': ' + burned[i].toLocaleString() + ' cal burned</span></div></div><span class="bar-day">' + shortDay(d) + '</span></div>').join('');
+  const W = 600, H = 180, step = W / Math.max(1, dates.length - 1);
+  const points = burned.map((v,i) => [i*step, H - (v/max)*H]);
+  const path = points.map((p,i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' ');
+  const dots = points.map((p,i) => '<div class="burn-point" style="left:' + (p[0]/W*100) + '%;top:' + (p[1]/H*100) + '%"><span class="tip">' + shortDate(dates[i]) + ': ' + burned[i].toLocaleString() + ' cal burned</span></div>').join('');
+  const goalPct = goal ? Math.min(100, goal/max*100) : null;
+  const rows = entries.map(e => '<tr><td>' + (e.time || '') + '</td><td>' + escapeHtml(e.item) + '</td><td>' + (e.quantity || '') + ' ' + escapeHtml(e.unit || '') + '</td><td>' + Math.round(e.calories) + '</td><td>' + (e.protein_g != null ? Math.round(e.protein_g) + 'g' : '—') + '</td></tr>').join('');
+  document.getElementById('chart-slot').innerHTML = '<div class="chart-legend"><span><i class="legend-swatch intake-swatch"></i>Calories eaten</span><span><i class="legend-swatch burn-swatch"></i>Calories burned</span></div><div class="combo-chart">' + (goalPct !== null ? '<div class="goal-line" style="bottom:' + goalPct + '%"><span>Goal ' + goal.toLocaleString() + '</span></div>' : '') + '<div class="combo-bars">' + bars + '</div><svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none"><path d="' + path + '" fill="none" stroke="var(--series-2)" stroke-width="2" vector-effect="non-scaling-stroke" /></svg><div class="burn-points">' + dots + '</div></div>' + (entries.length ? '<div class="day-detail"><div class="section-sub">Today\'s entries</div><table><thead><tr><th>Time</th><th>Item</th><th>Qty</th><th>Calories</th><th>Protein</th></tr></thead><tbody>' + rows + '</tbody></table></div>' : '<div class="section-sub day-empty-note">Nothing logged today yet.</div>');
+}
 function renderWeekView() {
   const dates = rangeDates(7);
   const values = dates.map(d => caloriesByDate[fmtDate(d)] || 0);
