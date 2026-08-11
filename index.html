@@ -5,7 +5,8 @@
 </style></head><body><main class="wrap" id="app"></main>
 <script>
 let D;
-const today=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+function chicagoToday(){const p=new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()).reduce((o,x)=>(o[x.type]=x.value,o),{});return p.year+'-'+p.month+'-'+p.day}
+const today=chicagoToday();
 let selected=today;
 const $=s=>document.querySelector(s), esc=s=>{const d=document.createElement('div');d.textContent=s??'';return d.innerHTML};
 const foodDate=d=>D.food_entries.filter(x=>x.date===d);
@@ -28,6 +29,6 @@ function periodView(mode){
 }
 function move(n){const d=new Date(selected+'T12:00:00');d.setDate(d.getDate()+n);selected=d.toISOString().slice(0,10);render()}
 function show(tab){document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));document.querySelector('#'+tab).classList.add('active');document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.tab===tab));}
-function render(){document.querySelector('#dashboard').innerHTML=dayView();document.querySelector('#week').innerHTML=periodView('week');document.querySelector('#month').innerHTML=periodView('month');document.querySelector('#today').textContent=fmt(today)}
+function render(){try{document.querySelector('#dashboard').innerHTML=dayView();document.querySelector('#week').innerHTML=periodView('week');document.querySelector('#month').innerHTML=periodView('month');document.querySelector('#today').textContent=fmt(today)}catch(e){showError(e)}}
 document.querySelector('#app').innerHTML='<header><h1>Calorie & Workout Tracker</h1><span class="date-label" id="today"></span></header><nav class="tabs"><button class="tab active" data-tab="dashboard">Dashboard</button><button class="tab" data-tab="week">Week</button><button class="tab" data-tab="month">Month</button></nav><div id="dashboard" class="panel active"></div><div id="week" class="panel"></div><div id="month" class="panel"></div>';document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>show(b.dataset.tab));
 function safeData(x){x=x&&typeof x==='object'?x:{};return Object.assign({settings:{},food_entries:[],daily_active_calories:[],workout_entries:[]},x,{settings:Object.assign({},x.settings||{}),food_entries:Array.isArray(x.food_entries)?x.food_entries:[],daily_active_calories:Array.isArray(x.daily_active_calories)?x.daily_active_calories:[],workout_entries:Array.isArray(x.workout_entries)?x.workout_entries:[]})}function showError(e){document.querySelector('#app').innerHTML='<div class="card"><h2>Dashboard could not load</h2><p class="note">The tracker data is safe. Reload this page in a moment.</p><p class="pill">'+String(e&&e.message||e)+'</p></div>'}window.addEventListener('error',e=>showError(e.error||e.message));fetch('data.json?live='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Data request failed: '+r.status);return r.json()}).then(x=>{D=safeData(x);render()}).catch(e=>{D=safeData({});showError(e);});
