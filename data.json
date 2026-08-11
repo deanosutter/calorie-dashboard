@@ -347,7 +347,16 @@
     }
   ],
   "routines": [],
-  "workout_entries": [],
+  "workout_entries": [
+    {
+      "date": "2026-08-11",
+      "time": "08:00",
+      "routine": "HIIT treadmill",
+      "duration": "~40 min",
+      "source": "Apple Watch + user detail",
+      "notes": "3 run intervals: 7.0 mph × 2 min each; 3 incline intervals: 3.4 mph at 15% × 4 min each; 2 min warm-up walk, cooldown, and walking between intervals. Heart-rate pattern: runs typically >150 bpm; incline builds to ~120–130 bpm. Watch active energy is recorded separately as the day's total."
+    }
+  ],
   "weight_entries": [
     {
       "date": "2026-08-09",
@@ -383,6 +392,14 @@
       "protein_g": 33,
       "notes": "3 casserole squares + 1 tiny avocado. ~46g fat, ~12g carbs, ~5-6g fiber. If Deano says this lunch deviated (e.g. '2 squares instead of 3', 'no avocado today'), recompute from the components above rather than using this cached total, and log the recomputed version instead — don't silently overwrite this saved meal unless he says to update it.",
       "created": "2026-08-10"
+    }
+  ],
+  "daily_active_calories": [
+    {
+      "date": "2026-08-11",
+      "calories": 708,
+      "source": "Apple Watch synced Active Energy",
+      "synced_at": "2026-08-11"
     }
   ]
 }
