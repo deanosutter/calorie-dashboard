@@ -312,7 +312,8 @@
       "unit": "serving",
       "calories": 15,
       "protein_g": 0.3,
-      "source": "estimated"
+      "source": "estimated",
+      "meal": "Breakfast"
     },
     {
       "date": "2026-08-10",
@@ -322,7 +323,8 @@
       "unit": "can",
       "calories": 10,
       "protein_g": 0,
-      "source": "estimated"
+      "source": "estimated",
+      "meal": "Breakfast"
     },
     {
       "date": "2026-08-10",
@@ -332,7 +334,8 @@
       "unit": "cup",
       "calories": 320,
       "protein_g": 9,
-      "source": "label"
+      "source": "label",
+      "meal": "Snacks"
     },
     {
       "date": "2026-08-10",
@@ -342,7 +345,8 @@
       "unit": "serving",
       "calories": 585,
       "protein_g": 33,
-      "source": "saved meal"
+      "source": "saved meal",
+      "meal": "Lunch"
     },
     {
       "date": "2026-08-10",
@@ -352,7 +356,8 @@
       "unit": "serving",
       "calories": 519,
       "protein_g": 26.9,
-      "source": "mixed_saved_and_estimated"
+      "source": "mixed_saved_and_estimated",
+      "meal": "Lunch"
     },
     {
       "date": "2026-08-10",
@@ -362,7 +367,8 @@
       "unit": "serving",
       "calories": 420,
       "protein_g": 5.5,
-      "source": "mixed_saved_and_estimated"
+      "source": "mixed_saved_and_estimated",
+      "meal": "Snacks"
     },
     {
       "date": "2026-08-11",
@@ -374,7 +380,8 @@
       "protein_g": 42.5,
       "source": "saved recipe estimate",
       "carbs_g": 86.5,
-      "fat_g": 37.5
+      "fat_g": 37.5,
+      "meal": "Lunch"
     },
     {
       "date": "2026-08-12",
@@ -386,7 +393,8 @@
       "protein_g": 18,
       "carbs_g": 58,
       "fat_g": 40,
-      "source": "label + estimated macros"
+      "source": "label + estimated macros",
+      "meal": "Snacks"
     },
     {
       "date": "2026-08-12",
@@ -398,7 +406,8 @@
       "protein_g": 2.4,
       "carbs_g": 31,
       "fat_g": 0.4,
-      "source": "estimated"
+      "source": "estimated",
+      "meal": "Snacks"
     },
     {
       "date": "2026-08-12",
@@ -410,7 +419,8 @@
       "protein_g": 2,
       "carbs_g": 18,
       "fat_g": 11,
-      "source": "estimated"
+      "source": "estimated",
+      "meal": "Snacks"
     },
     {
       "date": "2026-08-12",
@@ -422,7 +432,8 @@
       "protein_g": 2,
       "carbs_g": 22,
       "fat_g": 1,
-      "source": "estimated"
+      "source": "estimated",
+      "meal": "Snacks"
     },
     {
       "date": "2026-08-12",
@@ -434,7 +445,8 @@
       "protein_g": 1,
       "carbs_g": 19,
       "fat_g": 8,
-      "source": "estimated"
+      "source": "estimated",
+      "meal": "Snacks"
     },
     {
       "date": "2026-08-12",
@@ -446,7 +458,8 @@
       "protein_g": 8,
       "carbs_g": 24,
       "fat_g": 16,
-      "source": "estimated"
+      "source": "estimated",
+      "meal": "Snacks"
     },
     {
       "date": "2026-08-12",
@@ -458,7 +471,8 @@
       "protein_g": 0.3,
       "carbs_g": 1,
       "fat_g": 1,
-      "source": "estimated"
+      "source": "estimated",
+      "meal": "Breakfast"
     },
     {
       "date": "2026-08-12",
@@ -470,7 +484,8 @@
       "protein_g": 0,
       "carbs_g": 5,
       "fat_g": 0,
-      "source": "estimated"
+      "source": "estimated",
+      "meal": "Snacks"
     },
     {
       "date": "2026-08-12",
@@ -482,7 +497,8 @@
       "protein_g": 0,
       "carbs_g": 0,
       "fat_g": 0,
-      "source": "reported"
+      "source": "reported",
+      "meal": "Snacks"
     }
   ],
   "routines": [
