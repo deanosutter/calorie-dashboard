@@ -546,6 +546,20 @@
       "routine": "Shoulders + Biceps",
       "source": "user reported",
       "notes": "Superset 1: warmup 10×45 lb shoulder press + 10×25 lb curl; set 2 8×55 lb press + 8×35 lb curl; set 3 8×55 lb press + 8×55 lb curl. Superset 2: 2 sets of 8×20 lb lateral raise + 8×35 lb twisting curl. Superset 3: 2 sets of 8×20 lb reverse fly + 8×25 lb hammer curl. Leg extension and leg curl: 1×10 each at 130 lb. Core: lower-back forward extension 2×10 at 45 lb; side bends 2×10 each side at 25 lb; decline situps 2×15 slow, bodyweight. Stair finish as shown in reference image."
+    },
+    {
+      "date": "2026-08-11",
+      "time": "08:00",
+      "routine": "Core + Lower Back",
+      "source": "user reported",
+      "notes": "Lower-back forward extensions: 2 sets × 10 reps with 45 lb plate; side bends: 2 sets × 10 reps each side with 25 lb; decline bench sit-ups: 2 sets × 15 slow reps, bodyweight."
+    },
+    {
+      "date": "2026-08-11",
+      "time": "08:00",
+      "routine": "Stair Finish",
+      "source": "user reported",
+      "notes": "Stair-machine finisher performed after the shoulders + biceps, legs, and core work. Exact interval settings are not present in the canonical data."
     }
   ],
   "weight_entries": [
@@ -589,8 +603,8 @@
     {
       "date": "2026-08-11",
       "calories": 708,
-      "source": "Apple Watch synced Active Energy",
-      "synced_at": "2026-08-11"
+      "source": "Apple Health synced Active Energy (708.23 kcal; rounded)",
+      "synced_at": "2026-08-12"
     }
   ]
 }
