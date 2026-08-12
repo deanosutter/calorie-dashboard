@@ -670,27 +670,15 @@
   ],
   "daily_active_calories": [
     {
-      "date": "2026-08-11",
-      "calories": 1090,
-      "source": "Apple Health synced Active Energy (1,090 kcal; complete daily total)",
-      "synced_at": "2026-08-11"
-    }
-  ],
-  "daily_total_calories": [
-    {
       "date": "2026-08-10",
-      "calories": 2356,
-      "active_calories": 420,
-      "basal_calories": 1936,
-      "source": "Apple Health active + basal energy",
+      "calories": 420,
+      "source": "Apple Health synced Active Energy (red Move ring)",
       "synced_at": "2026-08-12"
     },
     {
       "date": "2026-08-11",
-      "calories": 3003,
-      "active_calories": 1090,
-      "basal_calories": 1913,
-      "source": "Apple Health active + basal energy; complete daily total",
+      "calories": 1090,
+      "source": "Apple Health synced Active Energy (red Move ring)",
       "synced_at": "2026-08-11"
     }
   ]
