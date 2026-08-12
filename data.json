@@ -624,6 +624,19 @@
       "source": "saved meal",
       "meal_id": "my-granola-parfait",
       "meal": "Dessert"
+    },
+    {
+      "date": "2026-08-12",
+      "time": "18:50",
+      "item": "Mixed Great Value trail mixes (equal parts Mountain and Nut & Honey)",
+      "quantity": 0.25,
+      "unit": "cup",
+      "calories": 160,
+      "protein_g": 4.5,
+      "carbs_g": 14.5,
+      "fat_g": 10,
+      "source": "label + saved mixed-trail-mix estimate",
+      "meal": "Snacks"
     }
   ],
   "routines": [
