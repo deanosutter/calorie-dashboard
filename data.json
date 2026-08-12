@@ -230,6 +230,20 @@
       "protein_g_per_unit": 0,
       "notes": "Logged as plain, unsweetened cold brew.",
       "created": "2026-08-12"
+    },
+    {
+      "id": "micronized-creatine-monohydrate",
+      "name": "Micronized Creatine Monohydrate",
+      "match_phrases": [
+        "creatine",
+        "creatine monohydrate",
+        "micronized creatine monohydrate"
+      ],
+      "unit": "scoop",
+      "calories_per_unit": 0,
+      "protein_g_per_unit": 0,
+      "notes": "Product label: 1 scoop = 5 g micronized creatine monohydrate. Other ingredients: none. Deano's standard serving is always 1 scoop (5 g).",
+      "created": "2026-08-12"
     }
   ],
   "recipes": [
@@ -553,6 +567,19 @@
       "source": "saved recipe estimate",
       "carbs_g": 86.5,
       "fat_g": 37.5,
+      "meal": "Lunch"
+    },
+    {
+      "date": "2026-08-12",
+      "time": "12:15",
+      "item": "Micronized Creatine Monohydrate",
+      "quantity": 1,
+      "unit": "scoop (5 g)",
+      "calories": 0,
+      "protein_g": 0,
+      "carbs_g": 0,
+      "fat_g": 0,
+      "source": "product label",
       "meal": "Lunch"
     }
   ],
