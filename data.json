@@ -291,8 +291,10 @@
       ],
       "calories_per_unit": 156,
       "protein_g_per_unit": 10.2,
-      "notes": "Whole casserole ~2,502 cal / ~163.5g protein total, cut into 16 equal squares. Per square also ~11-12g fat, ~2g carbs. If Deano mentions any deviation when logging (fewer/more squares, an omitted or swapped ingredient, a half batch, etc.), recompute from the ingredients list above (looking up each food_item's calories/protein per unit) instead of using the cached per-unit numbers, then log the recomputed total. Only overwrite ingredients/calories_per_unit here if he says the change is permanent to the recipe itself.",
-      "created": "2026-08-10"
+      "notes": "Whole casserole ~2,502 cal / ~163.5g protein total, cut into 16 equal squares. Per square: ~11.5g fat and ~2g carbs (structured fields now cached on the recipe). If Deano mentions any deviation when logging (fewer/more squares, an omitted or swapped ingredient, a half batch, etc.), recompute from the ingredients list above (looking up each food_item's calories/protein per unit) instead of using the cached per-unit numbers, then log the recomputed total. Only overwrite ingredients/calories_per_unit here if he says the change is permanent to the recipe itself.",
+      "created": "2026-08-10",
+      "carbs_g_per_unit": 2,
+      "fat_g_per_unit": 11.5
     },
     {
       "id": "ultimate-homemade-granola",
@@ -305,9 +307,11 @@
       "yield_qty": 6,
       "ingredients": [],
       "calories_per_unit": 467,
-      "protein_g_per_unit": 0,
-      "notes": "User-provided recipe. Approximate batch total 2,800 calories; approximately 230-235 calories per 1/2 cup. Ingredients: 3 cups rolled oats; 1/2 cup almonds; 3 tbsp chia seeds; 2 tbsp ground flaxseed; 1/4 cup unsweetened coconut; 3/4 tsp salt; 1 1/2 tsp cinnamon; 1/2 tsp ginger; 1/4 tsp pumpkin pie spice; pinch nutmeg; 1/2 cup natural peanut butter; 1/3 cup honey; 2 tsp vanilla extract.",
-      "created": "2026-08-10"
+      "protein_g_per_unit": 14.5,
+      "notes": "User-provided recipe. Approximate batch total: 2,800 calories, 87g protein, 321g carbs, and 147g fat; yield 6 cups. Per cup: 467 calories, 14.5g protein, 53.5g carbs, and 24.5g fat. Per 1/2 cup: approximately 234 calories, 7.3g protein, 26.8g carbs, and 12.3g fat. Ingredients: 3 cups rolled oats; 1/2 cup almonds; 3 tbsp chia seeds; 2 tbsp ground flaxseed; 1/4 cup unsweetened coconut; 3/4 tsp salt; 1 1/2 tsp cinnamon; 1/2 tsp ginger; 1/4 tsp pumpkin pie spice; pinch nutmeg; 1/2 cup natural peanut butter; 1/3 cup honey; 2 tsp vanilla extract. Macros are ingredient-based estimates and should be replaced with exact product-label values if provided.",
+      "created": "2026-08-10",
+      "carbs_g_per_unit": 53.5,
+      "fat_g_per_unit": 24.5
     },
     {
       "id": "thin-greek-yogurt-pepperoni-veggie-pizza",
