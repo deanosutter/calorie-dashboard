@@ -515,6 +515,20 @@
       "kind": "strength",
       "notes": "Typical supersets: shoulder press + concentration curl; lateral raise + twisting curl; reverse fly + hammer curl.",
       "created": "2026-08-12"
+    },
+    {
+      "id": "core-lower-back-decline",
+      "name": "Core + Lower Back",
+      "kind": "strength",
+      "notes": "Lower-back forward extensions: 2 sets × 10 reps with 45 lb plate; side bends: 2 sets × 10 reps each side with 25 lb; decline bench sit-ups: 2 sets × 15 slow reps, bodyweight.",
+      "created": "2026-08-11"
+    },
+    {
+      "id": "stair-finish",
+      "name": "Stair Finish",
+      "kind": "cardio",
+      "notes": "Stair-machine finisher performed after the shoulders + biceps, legs, and core work on 2026-08-11. The existing workout record retains the session reference; exact interval settings are not present in the canonical data.",
+      "created": "2026-08-11"
     }
   ],
   "workout_entries": [
