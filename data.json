@@ -298,7 +298,9 @@
       "calories_per_unit": 1634,
       "protein_g_per_unit": 85,
       "notes": "User-provided recipe for a 14–15 inch pizza on a 16-inch perforated pan. Estimated whole pizza: ~1,634 calories and ~80–90g protein. Ingredients: Greek yogurt dough with 1 cup all-purpose flour, 1 cup plain nonfat Greek yogurt, baking powder, salt, garlic powder, Italian seasoning, 1 tbsp Parmesan, 1/2 tbsp olive oil, and 1 tsp honey; toppings of 1/3 cup pizza sauce, 6 oz shredded mozzarella, 2 oz pepperoni, 1 cup frozen mixed peppers/onions/vegetables, 1–2 jalapeños, and 2 cloves garlic; crust finish of 1 tsp olive oil, 1 tbsp Parmesan, and garlic powder. Estimated half pizza: ~817 calories and ~40–45g protein. Replace estimates with exact label data and actual weights when available.",
-      "created": "2026-08-11"
+      "created": "2026-08-11",
+      "carbs_g_per_unit": 173,
+      "fat_g_per_unit": 75
     }
   ],
   "food_entries": [
@@ -370,10 +372,135 @@
       "unit": "whole pizza",
       "calories": 817,
       "protein_g": 42.5,
-      "source": "saved recipe estimate"
+      "source": "saved recipe estimate",
+      "carbs_g": 86.5,
+      "fat_g": 37.5
+    },
+    {
+      "date": "2026-08-12",
+      "time": "12:00",
+      "item": "Mixed Great Value trail mixes (equal parts Mountain and Nut & Honey)",
+      "quantity": 1,
+      "unit": "cup",
+      "calories": 640,
+      "protein_g": 18,
+      "carbs_g": 58,
+      "fat_g": 40,
+      "source": "label + estimated macros"
+    },
+    {
+      "date": "2026-08-12",
+      "time": "12:00",
+      "item": "Oranges",
+      "quantity": 2,
+      "unit": "medium oranges",
+      "calories": 124,
+      "protein_g": 2.4,
+      "carbs_g": 31,
+      "fat_g": 0.4,
+      "source": "estimated"
+    },
+    {
+      "date": "2026-08-12",
+      "time": "12:00",
+      "item": "Great Value kettle chips",
+      "quantity": 20,
+      "unit": "chips",
+      "calories": 180,
+      "protein_g": 2,
+      "carbs_g": 18,
+      "fat_g": 11,
+      "source": "estimated"
+    },
+    {
+      "date": "2026-08-12",
+      "time": "12:00",
+      "item": "Trader Joe's pretzel chips",
+      "quantity": 20,
+      "unit": "chips",
+      "calories": 110,
+      "protein_g": 2,
+      "carbs_g": 22,
+      "fat_g": 1,
+      "source": "estimated"
+    },
+    {
+      "date": "2026-08-12",
+      "time": "12:00",
+      "item": "Trader Joe's plantain chips",
+      "quantity": 20,
+      "unit": "chips",
+      "calories": 150,
+      "protein_g": 1,
+      "carbs_g": 19,
+      "fat_g": 8,
+      "source": "estimated"
+    },
+    {
+      "date": "2026-08-12",
+      "time": "12:00",
+      "item": "Hummus",
+      "quantity": 4,
+      "unit": "oz",
+      "calories": 280,
+      "protein_g": 8,
+      "carbs_g": 24,
+      "fat_g": 16,
+      "source": "estimated"
+    },
+    {
+      "date": "2026-08-12",
+      "time": "12:00",
+      "item": "Cold brew coffee with 1/3 cup almond milk",
+      "quantity": 1,
+      "unit": "serving",
+      "calories": 15,
+      "protein_g": 0.3,
+      "carbs_g": 1,
+      "fat_g": 1,
+      "source": "estimated"
+    },
+    {
+      "date": "2026-08-12",
+      "time": "12:00",
+      "item": "Fiber powder mixed in drink",
+      "quantity": 1,
+      "unit": "spoonful",
+      "calories": 20,
+      "protein_g": 0,
+      "carbs_g": 5,
+      "fat_g": 0,
+      "source": "estimated"
+    },
+    {
+      "date": "2026-08-12",
+      "time": "12:00",
+      "item": "Creatine",
+      "quantity": 5,
+      "unit": "g",
+      "calories": 0,
+      "protein_g": 0,
+      "carbs_g": 0,
+      "fat_g": 0,
+      "source": "reported"
     }
   ],
-  "routines": [],
+  "routines": [
+    {
+      "id": "hiit-treadmill",
+      "name": "HIIT treadmill",
+      "kind": "cardio",
+      "notes": "3 run intervals at 7.0 mph × 2 min; 3 incline intervals at 3.4 mph, 15% × 4 min; warm-up/cooldown and walking between intervals.",
+      "created": "2026-08-12"
+    },
+    {
+      "id": "shoulders-biceps",
+      "name": "Shoulders + Biceps",
+      "kind": "strength",
+      "notes": "Typical supersets: shoulder press + concentration curl; lateral raise + twisting curl; reverse fly + hammer curl.",
+      "created": "2026-08-12"
+    }
+  ],
   "workout_entries": [
     {
       "date": "2026-08-11",
@@ -382,6 +509,13 @@
       "duration": "~40 min",
       "source": "Apple Watch + user detail",
       "notes": "3 run intervals: 7.0 mph × 2 min each; 3 incline intervals: 3.4 mph at 15% × 4 min each; 2 min warm-up walk, cooldown, and walking between intervals. Heart-rate pattern: runs typically >150 bpm; incline builds to ~120–130 bpm. Watch active energy is recorded separately as the day's total."
+    },
+    {
+      "date": "2026-08-12",
+      "time": "08:00",
+      "routine": "Shoulders + Biceps",
+      "source": "user reported",
+      "notes": "Superset 1: warmup 10×45 lb shoulder press + 10×25 lb curl; set 2 8×55 lb press + 8×35 lb curl; set 3 8×55 lb press + 8×55 lb curl. Superset 2: 2 sets of 8×20 lb lateral raise + 8×35 lb twisting curl. Superset 3: 2 sets of 8×20 lb reverse fly + 8×25 lb hammer curl. Leg extension and leg curl: 1×10 each at 130 lb. Core: lower-back forward extension 2×10 at 45 lb; side bends 2×10 each side at 25 lb; decline situps 2×15 slow, bodyweight. Stair finish as shown in reference image."
     }
   ],
   "weight_entries": [
