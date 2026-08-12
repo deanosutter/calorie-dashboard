@@ -606,5 +606,23 @@
       "source": "Apple Health synced Active Energy (708.23 kcal; rounded)",
       "synced_at": "2026-08-12"
     }
+  ],
+  "daily_total_calories": [
+    {
+      "date": "2026-08-10",
+      "calories": 2356,
+      "active_calories": 420,
+      "basal_calories": 1936,
+      "source": "Apple Health active + basal energy",
+      "synced_at": "2026-08-12"
+    },
+    {
+      "date": "2026-08-11",
+      "calories": 1432,
+      "active_calories": 708,
+      "basal_calories": 724,
+      "source": "Apple Health active + basal energy; day-in-progress snapshot",
+      "synced_at": "2026-08-12"
+    }
   ]
 }
