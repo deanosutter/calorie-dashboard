@@ -204,6 +204,32 @@
       "protein_g_per_unit": 5.5,
       "notes": "",
       "created": "2026-08-10"
+    },
+    {
+      "id": "unsweetened-almond-milk",
+      "name": "Unsweetened almond milk",
+      "match_phrases": [
+        "unsweetened almond milk",
+        "almond milk"
+      ],
+      "unit": "cup",
+      "calories_per_unit": 45,
+      "protein_g_per_unit": 0.9,
+      "notes": "Based on prior logged serving: 1/3 cup = 15 calories and 0.3g protein.",
+      "created": "2026-08-12"
+    },
+    {
+      "id": "cold-brew-coffee",
+      "name": "Cold brew coffee",
+      "match_phrases": [
+        "cold brew coffee",
+        "cold brew"
+      ],
+      "unit": "oz",
+      "calories_per_unit": 0,
+      "protein_g_per_unit": 0,
+      "notes": "Logged as plain, unsweetened cold brew.",
+      "created": "2026-08-12"
     }
   ],
   "recipes": [
@@ -499,6 +525,18 @@
       "fat_g": 0,
       "source": "reported",
       "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-12",
+      "time": "07:00",
+      "item": "Cold brew with almond milk and cinnamon",
+      "quantity": 1,
+      "unit": "serving",
+      "calories": 15,
+      "protein_g": 0.3,
+      "source": "saved meal",
+      "meal_id": "cold-brew-almond-milk-cinnamon",
+      "meal": "Breakfast"
     }
   ],
   "routines": [
@@ -597,6 +635,33 @@
       "protein_g": 33,
       "notes": "3 casserole squares + 1 tiny avocado. ~46g fat, ~12g carbs, ~5-6g fiber. If Deano says this lunch deviated (e.g. '2 squares instead of 3', 'no avocado today'), recompute from the components above rather than using this cached total, and log the recomputed version instead — don't silently overwrite this saved meal unless he says to update it.",
       "created": "2026-08-10"
+    },
+    {
+      "id": "cold-brew-almond-milk-cinnamon",
+      "name": "Cold brew with almond milk and cinnamon",
+      "match_phrases": [
+        "cold brew with almond milk",
+        "cold brew and almond milk",
+        "morning cold brew"
+      ],
+      "components": [
+        {
+          "ref": "food_item",
+          "id": "cold-brew-coffee",
+          "qty": 12,
+          "unit": "oz"
+        },
+        {
+          "ref": "food_item",
+          "id": "unsweetened-almond-milk",
+          "qty": 0.3333333333,
+          "unit": "cup"
+        }
+      ],
+      "calories": 15,
+      "protein_g": 0.3,
+      "notes": "12 oz plain cold brew + 1/3 cup unsweetened almond milk with cinnamon frothed into the milk. Cinnamon treated as nutritionally negligible.",
+      "created": "2026-08-12"
     }
   ],
   "daily_active_calories": [
