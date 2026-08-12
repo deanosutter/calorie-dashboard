@@ -583,6 +583,20 @@
       "fat_g": 0,
       "source": "product label",
       "meal": "Lunch"
+    },
+    {
+      "date": "2026-08-12",
+      "time": "17:41",
+      "item": "Sausage Egg Casserole with 1 tiny avocado",
+      "quantity": 1,
+      "unit": "serving",
+      "calories": 578,
+      "protein_g": 34.4,
+      "carbs_g": 12,
+      "fat_g": 46,
+      "source": "saved meal — corrected sausage label",
+      "meal_id": "egg-casserole-lunch",
+      "meal": "Dinner"
     }
   ],
   "routines": [
