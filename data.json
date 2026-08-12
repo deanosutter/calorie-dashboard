@@ -597,6 +597,19 @@
       "source": "saved meal — corrected sausage label",
       "meal_id": "egg-casserole-lunch",
       "meal": "Dinner"
+    },
+    {
+      "date": "2026-08-12",
+      "time": "17:53",
+      "item": "Kroger easy-peel mandarin",
+      "quantity": 1,
+      "unit": "mandarin",
+      "calories": 47,
+      "protein_g": 0.7,
+      "carbs_g": 12,
+      "fat_g": 0.3,
+      "source": "estimated from standard medium mandarin",
+      "meal": "Snacks"
     }
   ],
   "routines": [
