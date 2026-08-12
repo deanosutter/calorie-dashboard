@@ -30,10 +30,12 @@
         "sausage"
       ],
       "unit": "lb",
-      "calories_per_unit": 1200,
-      "protein_g_per_unit": 60,
-      "notes": "",
-      "created": "2026-08-10"
+      "calories_per_unit": 1140,
+      "protein_g_per_unit": 72,
+      "notes": "Package label: 16 oz (1 lb), about 6 servings. Each 2 oz (56 g) pan-fried serving = 190 calories, 12g protein, 15g fat, 0g carbs. Whole package used in the egg casserole = 1,140 calories, 72g protein, 90g fat, 0g carbs.",
+      "created": "2026-08-10",
+      "carbs_g_per_unit": 0,
+      "fat_g_per_unit": 90
     },
     {
       "id": "plain-nonfat-greek-yogurt",
@@ -303,9 +305,9 @@
           "unit": "tsp"
         }
       ],
-      "calories_per_unit": 156,
-      "protein_g_per_unit": 10.2,
-      "notes": "Whole casserole ~2,502 cal / ~163.5g protein total, cut into 16 equal squares. Per square: ~11.5g fat and ~2g carbs (structured fields now cached on the recipe). If Deano mentions any deviation when logging (fewer/more squares, an omitted or swapped ingredient, a half batch, etc.), recompute from the ingredients list above (looking up each food_item's calories/protein per unit) instead of using the cached per-unit numbers, then log the recomputed total. Only overwrite ingredients/calories_per_unit here if he says the change is permanent to the recipe itself.",
+      "calories_per_unit": 152.6,
+      "protein_g_per_unit": 11,
+      "notes": "Updated with the full 16 oz package of breakfast sausage. Whole casserole recalculated from the saved ingredients: ~2,442 calories and ~175.5g protein total, cut into 16 equal squares. Per square: ~153 calories and ~11.0g protein. Carbs (~2g) and fat (~11.5g) remain the current ingredient-based estimates; the sausage itself contributes 0g carbs and 90g fat for the whole package. If Deano mentions a deviation when logging, recompute from the ingredients list rather than using cached per-unit numbers.",
       "created": "2026-08-10",
       "carbs_g_per_unit": 2,
       "fat_g_per_unit": 11.5
@@ -675,9 +677,9 @@
           "unit": "avocado"
         }
       ],
-      "calories": 585,
-      "protein_g": 33,
-      "notes": "3 casserole squares + 1 tiny avocado. ~46g fat, ~12g carbs, ~5-6g fiber. If Deano says this lunch deviated (e.g. '2 squares instead of 3', 'no avocado today'), recompute from the components above rather than using this cached total, and log the recomputed version instead — don't silently overwrite this saved meal unless he says to update it.",
+      "calories": 578,
+      "protein_g": 34.4,
+      "notes": "3 casserole squares + 1 tiny avocado. Updated using the corrected sausage label and saved casserole recipe: ~578 calories and ~34.4g protein. Current estimated macros: ~12g carbs and ~46g fat. If Deano says this lunch deviated, recompute from the components rather than using this cached total.",
       "created": "2026-08-10"
     },
     {
