@@ -541,6 +541,19 @@
       "source": "saved meal",
       "meal_id": "cold-brew-almond-milk-cinnamon",
       "meal": "Breakfast"
+    },
+    {
+      "date": "2026-08-12",
+      "time": "12:15",
+      "item": "Thin Greek Yogurt Pepperoni & Veggie Pizza (second half)",
+      "quantity": 0.5,
+      "unit": "whole pizza",
+      "calories": 817,
+      "protein_g": 42.5,
+      "source": "saved recipe estimate",
+      "carbs_g": 86.5,
+      "fat_g": 37.5,
+      "meal": "Lunch"
     }
   ],
   "routines": [
