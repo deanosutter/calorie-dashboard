@@ -666,6 +666,47 @@
       "protein_g": 0.3,
       "notes": "12 oz plain cold brew + 1/3 cup unsweetened almond milk with cinnamon frothed into the milk. Cinnamon treated as nutritionally negligible.",
       "created": "2026-08-12"
+    },
+    {
+      "id": "my-granola-parfait",
+      "name": "My Granola Parfait",
+      "match_phrases": [
+        "my granola parfait",
+        "granola parfait",
+        "my parfait"
+      ],
+      "components": [
+        {
+          "ref": "food_item",
+          "id": "banana-medium",
+          "qty": 1,
+          "unit": "banana"
+        },
+        {
+          "ref": "recipe",
+          "id": "ultimate-homemade-granola",
+          "qty": 0.5,
+          "unit": "cup"
+        },
+        {
+          "ref": "food_item",
+          "id": "plain-nonfat-greek-yogurt",
+          "qty": 1,
+          "unit": "cup"
+        },
+        {
+          "ref": "food_item",
+          "id": "blueberries",
+          "qty": 0.5,
+          "unit": "cup"
+        }
+      ],
+      "calories": 521,
+      "protein_g": 33.1,
+      "carbs_g": 73.3,
+      "fat_g": 12.9,
+      "notes": "1 medium banana, sliced; 1/2 cup Ultimate Homemade Granola; 1 cup plain nonfat Greek yogurt; and about 1/2 cup frozen blueberries. Cached totals use current saved ingredient values; carbs and fat include standard estimates for banana, yogurt, and blueberries.",
+      "created": "2026-08-12"
     }
   ],
   "daily_active_calories": [
