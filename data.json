@@ -637,6 +637,18 @@
       "fat_g": 10,
       "source": "label + saved mixed-trail-mix estimate",
       "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-13",
+      "time": "07:06",
+      "item": "Cold brew with almond milk",
+      "quantity": 1,
+      "unit": "serving",
+      "calories": 15,
+      "protein_g": 0.3,
+      "source": "saved meal",
+      "meal_id": "cold-brew-almond-milk-cinnamon",
+      "meal": "Breakfast"
     }
   ],
   "routines": [
