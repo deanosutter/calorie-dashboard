@@ -811,6 +811,21 @@
       "source": "saved recipe — corrected sausage label",
       "recipe_id": "sausage-egg-casserole",
       "meal": "Lunch"
+    },
+    {
+      "date": "2026-08-14",
+      "time": "14:20",
+      "item": "KIND Thins Dark Chocolate Nuts & Sea Salt bar",
+      "quantity": 1,
+      "unit": "bar (21 g)",
+      "calories": 100,
+      "protein_g": 2,
+      "carbs_g": 10,
+      "fat_g": 7,
+      "fiber_g": 2,
+      "sugar_g": 4,
+      "source": "product label",
+      "meal": "Snacks"
     }
   ],
   "routines": [
