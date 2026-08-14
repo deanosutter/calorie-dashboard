@@ -783,6 +783,34 @@
       "source": "saved product label",
       "food_item_id": "micronized-creatine-monohydrate",
       "meal": "Breakfast"
+    },
+    {
+      "date": "2026-08-14",
+      "time": "12:27",
+      "item": "Cold brew with 1/3 cup almond milk",
+      "quantity": 1,
+      "unit": "serving",
+      "calories": 15,
+      "protein_g": 0.3,
+      "carbs_g": 1,
+      "fat_g": 1,
+      "source": "saved meal",
+      "meal_id": "cold-brew-almond-milk-cinnamon",
+      "meal": "Breakfast"
+    },
+    {
+      "date": "2026-08-14",
+      "time": "12:27",
+      "item": "Sausage Egg Casserole (3 squares, no avocado)",
+      "quantity": 3,
+      "unit": "squares",
+      "calories": 457.8,
+      "protein_g": 33,
+      "carbs_g": 6,
+      "fat_g": 34.5,
+      "source": "saved recipe — corrected sausage label",
+      "recipe_id": "sausage-egg-casserole",
+      "meal": "Lunch"
     }
   ],
   "routines": [
