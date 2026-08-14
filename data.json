@@ -826,6 +826,19 @@
       "sugar_g": 4,
       "source": "product label",
       "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-14",
+      "time": "17:10",
+      "item": "Panda Corn Cafe 16 oz iced mocha latte with 2% milk",
+      "quantity": 1,
+      "unit": "16 oz drink",
+      "calories": 250,
+      "protein_g": 10,
+      "carbs_g": 36,
+      "fat_g": 8,
+      "source": "estimated from comparable 16 oz iced mocha with 2% milk",
+      "meal": "Snacks"
     }
   ],
   "routines": [
