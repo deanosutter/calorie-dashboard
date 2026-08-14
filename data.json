@@ -4,7 +4,7 @@
     "daily_calorie_goal": 1500,
     "daily_protein_goal_g": 170,
     "timezone": "America/Chicago",
-    "last_watch_sync": "2026-08-13T07:10:00-05:00"
+    "last_watch_sync": "2026-08-13T19:37:00-05:00"
   },
   "food_items": [
     {
@@ -649,6 +649,46 @@
       "source": "saved meal",
       "meal_id": "cold-brew-almond-milk-cinnamon",
       "meal": "Breakfast"
+    },
+    {
+      "date": "2026-08-13",
+      "time": "12:00",
+      "item": "My Granola Parfait",
+      "quantity": 1,
+      "unit": "serving",
+      "calories": 521,
+      "protein_g": 33.1,
+      "carbs_g": 73.3,
+      "fat_g": 12.9,
+      "source": "saved meal",
+      "meal_id": "my-granola-parfait",
+      "meal": "Lunch"
+    },
+    {
+      "date": "2026-08-13",
+      "time": "12:00",
+      "item": "Great Value kettle chips",
+      "quantity": 20,
+      "unit": "chips",
+      "calories": 180,
+      "protein_g": 2,
+      "carbs_g": 18,
+      "fat_g": 11,
+      "source": "existing tracker estimate",
+      "meal": "Lunch"
+    },
+    {
+      "date": "2026-08-13",
+      "time": "12:00",
+      "item": "Mixed Great Value trail mixes (equal parts Mountain and Nut & Honey)",
+      "quantity": 1,
+      "unit": "cup",
+      "calories": 640,
+      "protein_g": 18,
+      "carbs_g": 58,
+      "fat_g": 40,
+      "source": "label + existing mixed-trail-mix estimate",
+      "meal": "Lunch"
     }
   ],
   "routines": [
