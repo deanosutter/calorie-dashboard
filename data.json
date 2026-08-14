@@ -266,6 +266,23 @@
       "fat_g_per_unit": 0,
       "fiber_g_per_unit": 3,
       "sugar_g_per_unit": 4
+    },
+    {
+      "id": "mio-unwind-blood-orange-hibiscus",
+      "name": "Mio Unwind Blood Orange Hibiscus",
+      "match_phrases": [
+        "mio unwind",
+        "mio blood orange hibiscus",
+        "mio flavoring",
+        "little squirt of mio"
+      ],
+      "unit": "serving (3/4 tsp / 4 mL)",
+      "calories_per_unit": 0,
+      "protein_g_per_unit": 0,
+      "notes": "Product label: 1 serving = 3/4 tsp (4 mL), 0 calories, 0g fat, 0g carbohydrate, 0g sugar, 0g protein, 20mg sodium, 2.5mg niacin, 0.25mg vitamin B6, 0.76mcg vitamin B12, and 40mg magnesium. About 12 servings per bottle.",
+      "created": "2026-08-13",
+      "carbs_g_per_unit": 0,
+      "fat_g_per_unit": 0
     }
   ],
   "recipes": [
@@ -724,6 +741,20 @@
       "sugar_g": 4,
       "source": "product label",
       "food_item_id": "equate-daily-fiber-real-sugar",
+      "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-13",
+      "time": "20:20",
+      "item": "Mio Unwind Blood Orange Hibiscus",
+      "quantity": 1,
+      "unit": "small squirt",
+      "calories": 0,
+      "protein_g": 0,
+      "carbs_g": 0,
+      "fat_g": 0,
+      "source": "product label — amount reported as a small squirt",
+      "food_item_id": "mio-unwind-blood-orange-hibiscus",
       "meal": "Snacks"
     }
   ],
