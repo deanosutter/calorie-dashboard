@@ -756,6 +756,33 @@
       "source": "product label — amount reported as a small squirt",
       "food_item_id": "mio-unwind-blood-orange-hibiscus",
       "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-14",
+      "time": "04:28",
+      "item": "Celsius Watermelon Lemonade energy drink",
+      "quantity": 1,
+      "unit": "can",
+      "calories": 10,
+      "protein_g": 0,
+      "carbs_g": 2,
+      "fat_g": 0,
+      "source": "product-standard estimate",
+      "meal": "Breakfast"
+    },
+    {
+      "date": "2026-08-14",
+      "time": "04:28",
+      "item": "Micronized Creatine Monohydrate",
+      "quantity": 1,
+      "unit": "scoop (5 g)",
+      "calories": 0,
+      "protein_g": 0,
+      "carbs_g": 0,
+      "fat_g": 0,
+      "source": "saved product label",
+      "food_item_id": "micronized-creatine-monohydrate",
+      "meal": "Breakfast"
     }
   ],
   "routines": [
