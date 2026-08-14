@@ -4,7 +4,7 @@
     "daily_calorie_goal": 1500,
     "daily_protein_goal_g": 170,
     "timezone": "America/Chicago",
-    "last_watch_sync": "2026-08-13T19:37:00-05:00"
+    "last_watch_sync": "2026-08-13T19:58:00-05:00"
   },
   "food_items": [
     {
@@ -940,6 +940,12 @@
     {
       "date": "2026-08-12",
       "calories": 428,
+      "source": "Apple Fitness screenshot (red Move ring)",
+      "synced_at": "2026-08-13"
+    },
+    {
+      "date": "2026-08-13",
+      "calories": 281,
       "source": "Apple Fitness screenshot (red Move ring)",
       "synced_at": "2026-08-13"
     }
