@@ -246,6 +246,26 @@
       "protein_g_per_unit": 0,
       "notes": "Product label: 1 scoop = 5 g micronized creatine monohydrate. Other ingredients: none. Deano's standard serving is always 1 scoop (5 g).",
       "created": "2026-08-12"
+    },
+    {
+      "id": "equate-daily-fiber-real-sugar",
+      "name": "Equate Daily Fiber — Real Sugar",
+      "match_phrases": [
+        "equate daily fiber",
+        "daily fiber",
+        "psyllium husk fiber",
+        "fiber powder",
+        "spoonful of fiber"
+      ],
+      "unit": "rounded tsp",
+      "calories_per_unit": 25,
+      "protein_g_per_unit": 0,
+      "notes": "Product label: 1 rounded teaspoon (7 g) = 25 calories, 7 g carbohydrate, 3 g dietary fiber, 2 g soluble fiber, 4 g total/added sugars, 0.7 mg iron, 5 mg sodium, 35 mg potassium. Standard adult serving on label is 2 rounded teaspoons (14 g) = 50 calories and 6 g fiber. Mix with adequate liquid and drink promptly.",
+      "created": "2026-08-13",
+      "carbs_g_per_unit": 7,
+      "fat_g_per_unit": 0,
+      "fiber_g_per_unit": 3,
+      "sugar_g_per_unit": 4
     }
   ],
   "recipes": [
