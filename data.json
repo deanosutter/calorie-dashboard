@@ -709,6 +709,22 @@
       "fat_g": 40,
       "source": "label + existing mixed-trail-mix estimate",
       "meal": "Lunch"
+    },
+    {
+      "date": "2026-08-13",
+      "time": "20:10",
+      "item": "Equate Daily Fiber — Real Sugar",
+      "quantity": 1,
+      "unit": "rounded tsp",
+      "calories": 25,
+      "protein_g": 0,
+      "carbs_g": 7,
+      "fat_g": 0,
+      "fiber_g": 3,
+      "sugar_g": 4,
+      "source": "product label",
+      "food_item_id": "equate-daily-fiber-real-sugar",
+      "meal": "Snacks"
     }
   ],
   "routines": [
