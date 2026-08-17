@@ -911,6 +911,19 @@
       "source": "product label — amount reported as a small squeeze",
       "food_item_id": "mio-hydrate-berry-blast",
       "meal": "Breakfast"
+    },
+    {
+      "date": "2026-08-17",
+      "time": "12:15",
+      "item": "Cold brew with 1/2 cup unsweetened almond milk and cinnamon",
+      "quantity": 1,
+      "unit": "serving",
+      "calories": 22.5,
+      "protein_g": 0.45,
+      "carbs_g": 1.5,
+      "fat_g": 1.5,
+      "source": "saved ingredients + visual/user portion estimate",
+      "meal": "Lunch"
     }
   ],
   "routines": [
