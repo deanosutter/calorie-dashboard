@@ -963,6 +963,19 @@
       "fat_g": 3.6,
       "source": "estimated as 3/15 of 47 g bar; whole bar about 260 calories",
       "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-17",
+      "time": "20:30",
+      "item": "Great Value kettle chips",
+      "quantity": 28,
+      "unit": "chips",
+      "calories": 248,
+      "protein_g": 2.8,
+      "carbs_g": 24.8,
+      "fat_g": 15.2,
+      "source": "existing tracker estimate scaled from 20 chips; midpoint of user-reported 25–30 chips",
+      "meal": "Snacks"
     }
   ],
   "routines": [
