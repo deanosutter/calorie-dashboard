@@ -924,6 +924,19 @@
       "fat_g": 1.5,
       "source": "saved ingredients + visual/user portion estimate",
       "meal": "Lunch"
+    },
+    {
+      "date": "2026-08-17",
+      "time": "17:30",
+      "item": "Grilled chicken breast with steamed broccoli, cauliflower & Brussels sprouts and olive oil",
+      "quantity": 1,
+      "unit": "bowl (5–6 oz chicken, 3 cups vegetables, 1 tsp oil)",
+      "calories": 425,
+      "protein_g": 57,
+      "carbs_g": 25,
+      "fat_g": 10,
+      "source": "estimated from user-reported portions; chicken midpoint 5.5 oz",
+      "meal": "Dinner"
     }
   ],
   "routines": [
