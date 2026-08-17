@@ -976,6 +976,32 @@
       "fat_g": 15.2,
       "source": "existing tracker estimate scaled from 20 chips; midpoint of user-reported 25–30 chips",
       "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-17",
+      "time": "20:45",
+      "item": "Emergen-C Original Formula drink mix",
+      "quantity": 1,
+      "unit": "packet",
+      "calories": 35,
+      "protein_g": 0,
+      "carbs_g": 8,
+      "fat_g": 0,
+      "source": "standard product nutrition; flavor not specified",
+      "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-17",
+      "time": "20:45",
+      "item": "Centrum MultiGummies Men 50+ multivitamin",
+      "quantity": 2,
+      "unit": "gummies (1 serving)",
+      "calories": 15,
+      "protein_g": 0,
+      "carbs_g": 3,
+      "fat_g": 0,
+      "source": "manufacturer serving information",
+      "meal": "Snacks"
     }
   ],
   "routines": [
