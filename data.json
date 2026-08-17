@@ -869,6 +869,63 @@
       "kind": "cardio",
       "notes": "Stair-machine finisher performed after the shoulders + biceps, legs, and core work on 2026-08-11. The existing workout record retains the session reference; exact interval settings are not present in the canonical data.",
       "created": "2026-08-11"
+    },
+    {
+      "id": "back-triceps",
+      "name": "Back + Triceps",
+      "kind": "strength",
+      "exercises": [
+        {
+          "superset": 1,
+          "name": "Lat Pulldown Machine",
+          "sets": 2,
+          "reps": "actual each session",
+          "weight": "actual each session",
+          "unit": "lb"
+        },
+        {
+          "superset": 1,
+          "name": "Bodyweight Dips",
+          "sets": 2,
+          "reps": "actual each session",
+          "weight": "bodyweight",
+          "unit": "bodyweight"
+        },
+        {
+          "superset": 2,
+          "name": "Seated Machine Row",
+          "sets": 2,
+          "reps": "actual each session",
+          "weight": "actual each session",
+          "unit": "lb"
+        },
+        {
+          "superset": 2,
+          "name": "Machine Triceps Extension",
+          "sets": 2,
+          "reps": "actual each session",
+          "weight": "actual each session",
+          "unit": "lb"
+        },
+        {
+          "superset": 3,
+          "name": "One-Arm Dumbbell Bench Row",
+          "sets": 2,
+          "reps": "actual each arm each session",
+          "weight": "actual each session",
+          "unit": "lb"
+        },
+        {
+          "superset": 3,
+          "name": "Single-Arm Dumbbell Triceps Extension",
+          "sets": 2,
+          "reps": "actual each arm each session",
+          "weight": "actual each session",
+          "unit": "lb"
+        }
+      ],
+      "notes": "Canonical exercise names and order. Deano may refer to exercises conversationally or with shortened names; match those references to these saved movements. Log actual weight and reps for every set on every workout day. Warm-up sets are recorded separately from the two working sets.",
+      "created": "2026-08-17"
     }
   ],
   "workout_entries": [
