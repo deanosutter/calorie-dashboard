@@ -283,6 +283,23 @@
       "created": "2026-08-13",
       "carbs_g_per_unit": 0,
       "fat_g_per_unit": 0
+    },
+    {
+      "id": "mio-hydrate-berry-blast",
+      "name": "Mio Hydrate Berry Blast",
+      "match_phrases": [
+        "mio hydrate",
+        "mio hydrate berry blast",
+        "berry blast electrolytes",
+        "electrolyte squeeze"
+      ],
+      "unit": "serving (3/4 tsp / 4 mL)",
+      "calories_per_unit": 0,
+      "protein_g_per_unit": 0,
+      "carbs_g_per_unit": 0,
+      "fat_g_per_unit": 0,
+      "notes": "Label: 1 serving (3/4 tsp / 4 mL) = 0 calories, 0g carbohydrate, 0g sugar, 0g protein, approximately 75mg sodium and 60mg potassium, plus B vitamins. Deano typically uses a small squeeze, likely less than one full serving.",
+      "created": "2026-08-17"
     }
   ],
   "recipes": [
@@ -880,6 +897,20 @@
       "source": "saved recipe estimate",
       "recipe_id": "thin-greek-yogurt-pepperoni-veggie-pizza",
       "meal": "Lunch"
+    },
+    {
+      "date": "2026-08-17",
+      "time": "09:00",
+      "item": "Mio Hydrate Berry Blast",
+      "quantity": 1,
+      "unit": "small squeeze",
+      "calories": 0,
+      "protein_g": 0,
+      "carbs_g": 0,
+      "fat_g": 0,
+      "source": "product label — amount reported as a small squeeze",
+      "food_item_id": "mio-hydrate-berry-blast",
+      "meal": "Breakfast"
     }
   ],
   "routines": [
