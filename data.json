@@ -839,6 +839,47 @@
       "fat_g": 8,
       "source": "estimated from comparable 16 oz iced mocha with 2% milk",
       "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-17",
+      "time": "09:00",
+      "item": "Celsius energy drink",
+      "quantity": 1,
+      "unit": "12 oz can",
+      "calories": 10,
+      "protein_g": 0,
+      "carbs_g": 2,
+      "fat_g": 0,
+      "source": "existing tracker product-standard estimate",
+      "meal": "Breakfast"
+    },
+    {
+      "date": "2026-08-17",
+      "time": "09:00",
+      "item": "Micronized Creatine Monohydrate",
+      "quantity": 1,
+      "unit": "scoop (5 g)",
+      "calories": 0,
+      "protein_g": 0,
+      "carbs_g": 0,
+      "fat_g": 0,
+      "source": "saved product label",
+      "food_item_id": "micronized-creatine-monohydrate",
+      "meal": "Breakfast"
+    },
+    {
+      "date": "2026-08-17",
+      "time": "12:00",
+      "item": "Thin Greek Yogurt Pepperoni & Veggie Pizza (2 of 8 slices)",
+      "quantity": 0.25,
+      "unit": "whole pizza",
+      "calories": 408.5,
+      "protein_g": 21.25,
+      "carbs_g": 43.25,
+      "fat_g": 18.75,
+      "source": "saved recipe estimate",
+      "recipe_id": "thin-greek-yogurt-pepperoni-veggie-pizza",
+      "meal": "Lunch"
     }
   ],
   "routines": [
