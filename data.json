@@ -1111,6 +1111,19 @@
       "fat_g": 3.6,
       "source": "existing tracker estimate: 3/15 of 47 g bar",
       "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-18",
+      "time": "14:45",
+      "item": "Snack bar (nutrition label shown)",
+      "quantity": 1,
+      "unit": "bar (34 g)",
+      "calories": 160,
+      "protein_g": 3,
+      "carbs_g": 21,
+      "fat_g": 7,
+      "source": "product label photo",
+      "meal": "Snacks"
     }
   ],
   "routines": [
