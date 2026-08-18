@@ -1071,6 +1071,20 @@
       "source": "saved recipe + saved food item; adjusted from standard meal",
       "recipe_id": "sausage-egg-casserole",
       "meal": "Lunch"
+    },
+    {
+      "date": "2026-08-18",
+      "time": "14:15",
+      "item": "My Granola Parfait",
+      "quantity": 1,
+      "unit": "serving",
+      "calories": 521,
+      "protein_g": 33.1,
+      "carbs_g": 73.3,
+      "fat_g": 12.9,
+      "source": "saved meal",
+      "meal_id": "my-granola-parfait",
+      "meal": "Lunch"
     }
   ],
   "routines": [
