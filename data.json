@@ -1085,6 +1085,32 @@
       "source": "saved meal",
       "meal_id": "my-granola-parfait",
       "meal": "Lunch"
+    },
+    {
+      "date": "2026-08-18",
+      "time": "14:30",
+      "item": "Great Value kettle chips",
+      "quantity": 20,
+      "unit": "chips",
+      "calories": 180,
+      "protein_g": 2,
+      "carbs_g": 18,
+      "fat_g": 11,
+      "source": "existing tracker estimate",
+      "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-18",
+      "time": "14:30",
+      "item": "Trader Joe's Dark Chocolate with Almonds (3 small squares)",
+      "quantity": 3,
+      "unit": "small squares (estimated 3/15 bar)",
+      "calories": 52,
+      "protein_g": 0.6,
+      "carbs_g": 4.2,
+      "fat_g": 3.6,
+      "source": "existing tracker estimate: 3/15 of 47 g bar",
+      "meal": "Snacks"
     }
   ],
   "routines": [
