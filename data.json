@@ -858,6 +858,20 @@
       "meal": "Snacks"
     },
     {
+      "date": "2026-08-14",
+      "time": "18:00",
+      "item": "Thin Greek Yogurt Pepperoni & Veggie Pizza (half pizza)",
+      "quantity": 0.5,
+      "unit": "whole pizza",
+      "calories": 817,
+      "protein_g": 42.5,
+      "carbs_g": 86.5,
+      "fat_g": 37.5,
+      "source": "saved recipe estimate",
+      "recipe_id": "thin-greek-yogurt-pepperoni-veggie-pizza",
+      "meal": "Dinner"
+    },
+    {
       "date": "2026-08-17",
       "time": "09:00",
       "item": "Celsius energy drink",
