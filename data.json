@@ -1276,6 +1276,17 @@
       "synced_at": "2026-08-13"
     },
     {
+      "date": "2026-08-16",
+      "calories": 369,
+      "total_calories": 2282,
+      "exercise_minutes": 8,
+      "stand_hours": 16,
+      "steps": 2685,
+      "distance_mi": 1.33,
+      "source": "Apple Fitness screenshot (daily summary)",
+      "synced_at": "2026-08-18"
+    },
+    {
       "date": "2026-08-17",
       "calories": 897,
       "source": "Apple Fitness screenshot (red Move ring)",
