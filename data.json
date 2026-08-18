@@ -1057,6 +1057,20 @@
       "source": "saved meal",
       "meal_id": "cold-brew-almond-milk-cinnamon",
       "meal": "Breakfast"
+    },
+    {
+      "date": "2026-08-18",
+      "time": "11:00",
+      "item": "Sausage Egg Casserole (4 squares) with 1 Trader Joe's Teeny Tiny Avocado",
+      "quantity": 1,
+      "unit": "serving",
+      "calories": 730.4,
+      "protein_g": 45.5,
+      "carbs_g": 14,
+      "fat_g": 57,
+      "source": "saved recipe + saved food item; adjusted from standard meal",
+      "recipe_id": "sausage-egg-casserole",
+      "meal": "Lunch"
     }
   ],
   "routines": [
