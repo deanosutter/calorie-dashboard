@@ -1,0 +1,7 @@
+{
+  "schema_version": 4,
+  "legacy_source": "data.json",
+  "daily_directory": "data/daily",
+  "dates": ["2026-08-22"],
+  "notes": "Schema v4 stores mutable tracking data in one file per day. Legacy data.json remains read-only during migration."
+}
