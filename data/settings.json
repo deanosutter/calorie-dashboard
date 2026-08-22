@@ -1,0 +1,7 @@
+{
+  "schema_version": 4,
+  "daily_calorie_goal": 1500,
+  "daily_protein_goal_g": 170,
+  "timezone": "America/Chicago",
+  "legacy_reference_source": "../data.json"
+}
