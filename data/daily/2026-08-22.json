@@ -1,0 +1,16 @@
+{
+  "schema_version": 4,
+  "date": "2026-08-22",
+  "food_entries": [],
+  "workout_entries": [
+    {
+      "time": "10:00",
+      "routine": "Back + Triceps",
+      "source": "user reported — completed",
+      "notes": "Lat pulldown machine: 160 lb × 8 reps × 2 sets. Bodyweight dips: 12 reps × 2 sets. Seated machine row: 175 lb × 10 reps, then 190 lb × 10 reps. Machine rope triceps extensions: 130 lb × 10 reps × 2 sets. One-arm dumbbell bench row: 65 lb × 8 reps each arm × 2 sets. Single-arm overhead dumbbell triceps extension: 25 lb × 10 reps each arm × 2 sets."
+    }
+  ],
+  "daily_active_calories": null,
+  "weight_entries": [],
+  "updated_at": "2026-08-22T10:00:00-05:00"
+}
