@@ -1501,6 +1501,14 @@
       "calories": 897,
       "source": "Apple Fitness screenshot (red Move ring)",
       "synced_at": "2026-08-18"
+    },
+    {
+      "date": "2026-08-24",
+      "calories": 1013,
+      "total_calories": 2249,
+      "exercise_minutes": 121,
+      "source": "Apple Fitness screenshot (daily summary as of 2:36 PM)",
+      "synced_at": "2026-08-24T14:36:00-05:00"
     }
   ]
 }
