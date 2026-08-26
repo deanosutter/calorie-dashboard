@@ -1203,7 +1203,9 @@
       "calories": 22.5,
       "protein_g": 0.45,
       "source": "saved food items",
-      "meal": "Breakfast"
+      "meal": "Breakfast",
+      "carbs_g": 1.5,
+      "fat_g": 1.5
     },
     {
       "date": "2026-08-26",
@@ -1214,7 +1216,9 @@
       "calories": 10,
       "protein_g": 0,
       "source": "saved standard servings",
-      "meal": "Breakfast"
+      "meal": "Breakfast",
+      "carbs_g": 2,
+      "fat_g": 0
     },
     {
       "date": "2026-08-26",
@@ -1225,7 +1229,9 @@
       "calories": 478.5,
       "protein_g": 27.05,
       "source": "saved ingredients + estimated berry blend",
-      "meal": "Lunch"
+      "meal": "Lunch",
+      "carbs_g": 69.6,
+      "fat_g": 12.6
     }
   ],
   "routines": [
