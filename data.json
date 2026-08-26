@@ -1310,6 +1310,19 @@
       "fat_g": 22.5,
       "source": "user-provided calories; macros estimated",
       "meal": "Dessert"
+    },
+    {
+      "date": "2026-08-25",
+      "time": "18:00",
+      "item": "Hummus",
+      "quantity": 3,
+      "unit": "oz",
+      "calories": 210,
+      "protein_g": 6,
+      "carbs_g": 18,
+      "fat_g": 12,
+      "source": "existing tracker estimate",
+      "meal": "Snacks"
     }
   ],
   "routines": [
