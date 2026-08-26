@@ -1193,6 +1193,39 @@
       "fat_g": 16.7,
       "source": "protein powder label + saved fruit values + standard peanut butter estimate",
       "meal": "Dinner"
+    },
+    {
+      "date": "2026-08-26",
+      "time": "11:00",
+      "item": "Cold brew coffee with 1/2 cup unsweetened almond milk",
+      "quantity": 1,
+      "unit": "serving",
+      "calories": 22.5,
+      "protein_g": 0.45,
+      "source": "saved food items",
+      "meal": "Breakfast"
+    },
+    {
+      "date": "2026-08-26",
+      "time": "11:00",
+      "item": "Celsius energy drink with 5 g creatine monohydrate",
+      "quantity": 1,
+      "unit": "serving",
+      "calories": 10,
+      "protein_g": 0,
+      "source": "saved standard servings",
+      "meal": "Breakfast"
+    },
+    {
+      "date": "2026-08-26",
+      "time": "11:00",
+      "item": "Parfait: medium banana, 1/2 cup homemade granola, 3/4 cup nonfat Greek yogurt, 1/2 cup Great Value Antioxidant Blend frozen berries",
+      "quantity": 1,
+      "unit": "serving",
+      "calories": 478.5,
+      "protein_g": 27.05,
+      "source": "saved ingredients + estimated berry blend",
+      "meal": "Lunch"
     }
   ],
   "routines": [
