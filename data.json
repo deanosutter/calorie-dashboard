@@ -1323,6 +1323,59 @@
       "fat_g": 12,
       "source": "existing tracker estimate",
       "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-26",
+      "time": "18:00",
+      "item": "Sausage Egg Casserole — 3 squares with 1 Trader Joe's Teeny Tiny Avocado",
+      "quantity": 1,
+      "unit": "meal",
+      "calories": 578,
+      "protein_g": 34.4,
+      "carbs_g": 12,
+      "fat_g": 46,
+      "source": "saved meal",
+      "meal": "Dinner",
+      "meal_id": "egg-casserole-lunch"
+    },
+    {
+      "date": "2026-08-26",
+      "time": "18:30",
+      "item": "Salted caramel cake",
+      "quantity": 1,
+      "unit": "slice",
+      "calories": 600,
+      "protein_g": 6,
+      "carbs_g": 80,
+      "fat_g": 28,
+      "source": "estimated standard slice",
+      "meal": "Dessert"
+    },
+    {
+      "date": "2026-08-26",
+      "time": "20:00",
+      "item": "Trader Joe's peanut-butter pretzel nuggets",
+      "quantity": 20,
+      "unit": "nuggets",
+      "calories": 255,
+      "protein_g": 7.3,
+      "carbs_g": 36.4,
+      "fat_g": 9.1,
+      "source": "estimated from standard product serving",
+      "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-26",
+      "time": "20:00",
+      "item": "Trader Joe's plantain chips",
+      "quantity": 10,
+      "unit": "chips",
+      "calories": 75,
+      "protein_g": 0.5,
+      "carbs_g": 9.5,
+      "fat_g": 4,
+      "source": "estimated",
+      "meal": "Snacks"
     }
   ],
   "routines": [
