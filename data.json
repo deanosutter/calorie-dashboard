@@ -1417,6 +1417,20 @@
       "source": "saved product label",
       "food_item_id": "micronized-creatine-monohydrate",
       "meal": "Breakfast"
+    },
+    {
+      "date": "2026-08-27",
+      "time": "16:00",
+      "item": "Chicken and steamed cruciferous vegetable stir-fry",
+      "quantity": 1,
+      "unit": "large serving",
+      "calories": 692,
+      "protein_g": 115,
+      "carbs_g": 24,
+      "fat_g": 13.5,
+      "source": "estimated from 2 medium boneless skinless chicken breasts + 3 cups mixed cauliflower, broccoli, and Brussels sprouts + minimal olive-oil spray",
+      "meal": "Lunch",
+      "notes": "Seasoned with pepper and garlic salt. Chicken mixed into steamed vegetables. Olive oil described as a few spritzes."
     }
   ],
   "routines": [
