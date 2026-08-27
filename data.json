@@ -1447,6 +1447,19 @@
       "source": "product labels",
       "meal": "Snacks",
       "notes": "1 Emergen-C packet (30 cal, 7g carbs, 5g sugar) plus 1 rounded tsp Equate Daily Fiber — Real Sugar (25 cal, 7g carbs, 3g fiber, 4g sugar), mixed in water and consumed before lunch."
+    },
+    {
+      "date": "2026-08-27",
+      "time": "16:30",
+      "item": "Homemade almond brownie bites",
+      "quantity": 3,
+      "unit": "bites",
+      "calories": 300,
+      "protein_g": 4.5,
+      "carbs_g": 42,
+      "fat_g": 13.5,
+      "source": "prior user-provided calories; macros estimated",
+      "meal": "Dessert"
     }
   ],
   "routines": [
