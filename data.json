@@ -1534,7 +1534,7 @@
       "routine": "Chest + Curls",
       "duration": "35 min treadmill + 36 min completed strength session",
       "source": "user reported + Apple Fitness screenshots",
-      "notes": "Treadmill: 35 minutes. Superset 1 — Set 1: flat dumbbell bench press, 70 lb dumbbells × 10 reps; seated concentration curls (elbow braced against inner thigh), 30 lb dumbbells × 10 reps. Curl weight reduced because the inside of the elbows felt tender. Superset 1 — Set 2: flat dumbbell bench press, 70 lb dumbbells × 10 reps; seated concentration curls, 30 lb dumbbells × 10 reps each arm. Set 3: flat dumbbell bench press, 70 lb dumbbells × 11 reps; seated concentration curls, 30 lb dumbbells × 10 reps each arm. Superset 1 complete; moving to incline press. Superset 2 — Set 1: incline dumbbell bench press, 60 lb dumbbells × 10 reps; standing alternating twist curls, 30 lb dumbbells × 10 reps each arm. Set 2: incline dumbbell bench press, 60 lb dumbbells × 10 reps; standing alternating twist curls, 30 lb dumbbells × 10 reps each arm. Superset 2 complete. Superset 3 — Set 1: flat-bench dumbbell fly with a concentrated squeeze at the top, 40 lb dumbbells × 10 reps; single-arm overhead dumbbell triceps extension, 25 lb × 12 reps each arm. Superset 3 — Set 2: flat-bench dumbbell fly with a concentrated squeeze at the top, 40 lb dumbbells × 10 reps; single-arm overhead dumbbell triceps extension, 25 lb × 12 reps each arm. Superset 3 complete. Finisher superset — Set 1: machine triceps extension, 130 lb × 15 reps; standing dumbbell side bends, 45 lb × 15 reps each side. Set 2: machine triceps extension, 130 lb × 15 reps; standing dumbbell side bends, 45 lb × 15 reps each side. Finisher superset complete. Strength training completed in 36 minutes while simultaneously brainstorming. Apple Fitness summary at 4:47 PM: 1,073 active calories, 2,502 total calories, 126 exercise minutes, 12 stand hours, 11,588 steps, 5.58 miles, and 19 flights climbed. Visible workout segments: HIIT 331 active calories; Traditional Strength Training 229 active calories; Stairs 71 active calories; Outdoor Walk distances of 0.32 mi, 1.12 mi, 0.03 mi, and 0.14 mi (1.61 mi combined).",
+      "notes": "Treadmill: 35 minutes. Superset 1 — Set 1: flat dumbbell bench press, 70 lb dumbbells × 10 reps; seated concentration curls (elbow braced against inner thigh), 30 lb dumbbells × 10 reps. Curl weight reduced because the inside of the elbows felt tender. Superset 1 — Set 2: flat dumbbell bench press, 70 lb dumbbells × 10 reps; seated concentration curls, 30 lb dumbbells × 10 reps each arm. Set 3: flat dumbbell bench press, 70 lb dumbbells × 11 reps; seated concentration curls, 30 lb dumbbells × 10 reps each arm. Superset 1 complete; moving to incline press. Superset 2 — Set 1: incline dumbbell bench press, 60 lb dumbbells × 10 reps; standing alternating twist curls, 30 lb dumbbells × 10 reps each arm. Set 2: incline dumbbell bench press, 60 lb dumbbells × 10 reps; standing alternating twist curls, 30 lb dumbbells × 10 reps each arm. Superset 2 complete. Superset 3 — Set 1: flat-bench dumbbell fly with a concentrated squeeze at the top, 40 lb dumbbells × 10 reps; single-arm overhead dumbbell triceps extension, 25 lb × 12 reps each arm. Superset 3 — Set 2: flat-bench dumbbell fly with a concentrated squeeze at the top, 40 lb dumbbells × 10 reps; single-arm overhead dumbbell triceps extension, 25 lb × 12 reps each arm. Superset 3 complete. Finisher superset — Set 1: machine triceps extension, 130 lb × 15 reps; standing dumbbell side bends, 45 lb × 15 reps each side. Set 2: machine triceps extension, 130 lb × 15 reps; standing dumbbell side bends, 45 lb × 15 reps each side. Finisher superset complete. Strength training completed in 36 minutes while simultaneously brainstorming. Final Apple Fitness daily summary: 1,273 active calories, 3,294 total calories, 129 exercise minutes, 18 stand hours, 11,588 steps, 5.58 miles, and 19 flights climbed. Visible workout segments: HIIT 331 active calories; Traditional Strength Training 229 active calories; Stairs 71 active calories; Outdoor Walk distances of 0.32 mi, 1.12 mi, 0.03 mi, and 0.14 mi (1.61 mi combined).",
       "active_calories": 631
     },
     {
@@ -1734,15 +1734,15 @@
     },
     {
       "date": "2026-08-26",
-      "calories": 1073,
-      "total_calories": 2502,
-      "exercise_minutes": 126,
-      "stand_hours": 12,
+      "calories": 1273,
+      "total_calories": 3294,
+      "exercise_minutes": 129,
+      "stand_hours": 18,
       "steps": 11588,
       "distance_mi": 5.58,
       "flights_climbed": 19,
-      "source": "Apple Fitness screenshots (daily summary)",
-      "synced_at": "2026-08-26T16:47:00-05:00"
+      "source": "Apple Fitness screenshot (final daily summary)",
+      "synced_at": "2026-08-27"
     }
   ]
 }
