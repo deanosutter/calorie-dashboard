@@ -1474,6 +1474,58 @@
       "source": "saved ingredients — custom quantities",
       "meal": "Dinner",
       "notes": "5/8 cup Ultimate Homemade Granola, 3/4 cup plain nonfat Greek yogurt, 1 medium banana, and 1/2 cup blueberries."
+    },
+    {
+      "date": "2026-08-27",
+      "time": "20:00",
+      "item": "Hummus",
+      "quantity": 2,
+      "unit": "oz",
+      "calories": 140,
+      "protein_g": 4,
+      "carbs_g": 12,
+      "fat_g": 8,
+      "source": "estimated from prior tracker values",
+      "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-27",
+      "time": "20:00",
+      "item": "Trader Joe's pretzel chips",
+      "quantity": 8,
+      "unit": "chips",
+      "calories": 44,
+      "protein_g": 0.8,
+      "carbs_g": 8.8,
+      "fat_g": 0.4,
+      "source": "estimated from prior tracker values",
+      "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-27",
+      "time": "20:00",
+      "item": "Trader Joe's plantain chips",
+      "quantity": 10,
+      "unit": "chips",
+      "calories": 75,
+      "protein_g": 0.5,
+      "carbs_g": 9.5,
+      "fat_g": 4,
+      "source": "estimated from prior tracker values",
+      "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-27",
+      "time": "20:00",
+      "item": "Trader Joe's candied ginger",
+      "quantity": 6,
+      "unit": "small pieces",
+      "calories": 100,
+      "protein_g": 0,
+      "carbs_g": 25,
+      "fat_g": 0,
+      "source": "estimated as approximately one 30g serving",
+      "meal": "Snacks"
     }
   ],
   "routines": [
