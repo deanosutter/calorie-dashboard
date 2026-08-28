@@ -1566,6 +1566,33 @@
       "fat_g": 0,
       "source": "standard estimate",
       "meal": "Lunch"
+    },
+    {
+      "date": "2026-08-28",
+      "time": "15:00",
+      "item": "Homemade almond brownie bite",
+      "quantity": 1,
+      "unit": "bite",
+      "calories": 100,
+      "protein_g": 1.5,
+      "carbs_g": 14,
+      "fat_g": 4.5,
+      "source": "prior user-provided calories; macros estimated",
+      "meal": "Dessert"
+    },
+    {
+      "date": "2026-08-28",
+      "time": "15:00",
+      "item": "My Granola Parfait",
+      "quantity": 1,
+      "unit": "serving",
+      "calories": 521,
+      "protein_g": 33.1,
+      "carbs_g": 73.3,
+      "fat_g": 12.9,
+      "source": "saved meal",
+      "meal_id": "my-granola-parfait",
+      "meal": "Dessert"
     }
   ],
   "routines": [
