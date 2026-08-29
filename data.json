@@ -1593,6 +1593,72 @@
       "source": "saved meal",
       "meal_id": "my-granola-parfait",
       "meal": "Dessert"
+    },
+    {
+      "date": "2026-08-28",
+      "time": "22:50",
+      "item": "Thin Greek Yogurt Pepperoni & Veggie Pizza (one-eighth pizza)",
+      "quantity": 0.125,
+      "unit": "whole pizza",
+      "calories": 204.25,
+      "protein_g": 10.625,
+      "carbs_g": 21.625,
+      "fat_g": 9.375,
+      "source": "saved recipe estimate",
+      "recipe_id": "thin-greek-yogurt-pepperoni-veggie-pizza",
+      "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-28",
+      "time": "22:50",
+      "item": "Trader Joe's peanut-butter pretzel nuggets",
+      "quantity": 10,
+      "unit": "nuggets",
+      "calories": 127.5,
+      "protein_g": 3.65,
+      "carbs_g": 18.2,
+      "fat_g": 4.55,
+      "source": "estimated from prior tracker values",
+      "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-28",
+      "time": "22:50",
+      "item": "Trader Joe's pretzel chips",
+      "quantity": 10,
+      "unit": "chips",
+      "calories": 55,
+      "protein_g": 1,
+      "carbs_g": 11,
+      "fat_g": 0.5,
+      "source": "estimated from prior tracker values",
+      "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-28",
+      "time": "22:50",
+      "item": "Trader Joe's plantain chips",
+      "quantity": 10,
+      "unit": "chips",
+      "calories": 75,
+      "protein_g": 0.5,
+      "carbs_g": 9.5,
+      "fat_g": 4,
+      "source": "estimated from prior tracker values",
+      "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-28",
+      "time": "22:50",
+      "item": "Hummus",
+      "quantity": 1,
+      "unit": "oz",
+      "calories": 70,
+      "protein_g": 2,
+      "carbs_g": 6,
+      "fat_g": 4,
+      "source": "estimated from prior tracker values",
+      "meal": "Snacks"
     }
   ],
   "routines": [
