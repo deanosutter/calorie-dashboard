@@ -2117,6 +2117,18 @@
       "flights_climbed": 0,
       "source": "Apple Fitness screenshot (final daily summary)",
       "synced_at": "2026-08-28T22:51:00-05:00"
+    },
+    {
+      "date": "2026-09-01",
+      "calories": 861,
+      "total_calories": 2045,
+      "exercise_minutes": 84,
+      "stand_hours": 10,
+      "steps": 7595,
+      "distance_mi": 3.76,
+      "flights_climbed": 9,
+      "source": "Apple Fitness screenshot (interim daily summary as of 2:23 PM)",
+      "synced_at": "2026-09-01T14:23:00-05:00"
     }
   ]
 }
