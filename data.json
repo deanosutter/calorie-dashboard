@@ -1795,6 +1795,19 @@
       "protein_g": 2,
       "source": "estimated",
       "meal": "Snacks"
+    },
+    {
+      "date": "2026-09-01",
+      "time": "17:24",
+      "item": "My Granola Parfait",
+      "quantity": 1,
+      "unit": "serving",
+      "calories": 521,
+      "protein_g": 33.1,
+      "carbs_g": 73.3,
+      "fat_g": 12.9,
+      "source": "saved meal",
+      "meal": "Lunch"
     }
   ],
   "routines": [
