@@ -1659,6 +1659,50 @@
       "fat_g": 4,
       "source": "estimated from prior tracker values",
       "meal": "Snacks"
+    },
+    {
+      "date": "2026-09-01",
+      "time": "14:22",
+      "item": "Celsius energy drink",
+      "quantity": 1,
+      "unit": "can",
+      "calories": 10,
+      "protein_g": 0,
+      "source": "saved standard",
+      "meal": "Breakfast"
+    },
+    {
+      "date": "2026-09-01",
+      "time": "14:22",
+      "item": "Micronized Creatine Monohydrate",
+      "quantity": 1,
+      "unit": "scoop (5 g)",
+      "calories": 0,
+      "protein_g": 0,
+      "source": "saved food item",
+      "meal": "Breakfast"
+    },
+    {
+      "date": "2026-09-01",
+      "time": "14:22",
+      "item": "Cold brew coffee with 1/3 cup almond milk",
+      "quantity": 1,
+      "unit": "serving",
+      "calories": 15,
+      "protein_g": 0.3,
+      "source": "saved meal",
+      "meal": "Breakfast"
+    },
+    {
+      "date": "2026-09-01",
+      "time": "14:22",
+      "item": "Sausage Egg Casserole (3 squares) with 1 tiny avocado",
+      "quantity": 1,
+      "unit": "serving",
+      "calories": 578,
+      "protein_g": 34.4,
+      "source": "saved meal — corrected sausage label",
+      "meal": "Lunch"
     }
   ],
   "routines": [
@@ -1845,6 +1889,14 @@
       "source": "user reported + Apple Fitness screenshots — completed",
       "notes": "Treadmill: 35 minutes using repeating intervals — 1-minute walk/recovery around 3.0 mph; 2-minute run at 7.0 mph; 1-minute walk; 2-minute incline hike at 15% and 3.2–3.3 mph; then 1-minute walk/recovery around 3.0 mph to bring heart rate toward ~115 bpm. Heart rate reached approximately 155–165 bpm during running and approximately 130 bpm during incline intervals. Shoulders + biceps, Superset 1 — Set 1: seated dumbbell shoulder press, 50 lb dumbbells × 10 reps; seated concentration curl with elbow braced against inner thigh, 30 lb dumbbell × 10 reps each arm. Set 2: seated dumbbell shoulder press, 50 lb dumbbells × 10 reps; seated concentration curl, 30 lb dumbbell × 10 reps each arm. Inner elbow area remains tender/sore, primarily on the left with mild tenderness on the right, but the curls are not painful. Curl weight reduced from 35 lb to 30 lb. Set 3: seated dumbbell shoulder press, 50 lb dumbbells × 10 reps; seated concentration curl, 30 lb dumbbell × 10 reps each arm. Superset 1 complete. During concentration curls, at the bottom of each repetition Deano rotates the wrist/forearm fully outward, then rotates fully inward before curling to the top, intending to engage the forearm. Tenderness is also noticeable on the left while lifting and positioning the 50 lb dumbbells onto the thighs before kicking them up for shoulder presses; the same area on the right is less sore. This remains tenderness/soreness rather than pain. Superset 2 — Set 1: dumbbell lateral raise, 20 lb dumbbells × 10 reps; standing twisting dumbbell curl, 30 lb dumbbells × 10 reps each arm. Set 2: dumbbell lateral raise, 20 lb dumbbells × 10 reps; standing twisting dumbbell curl, 30 lb dumbbells × 10 reps each arm. Superset 2 complete. Superset 3 — Set 1: incline-bench chest-supported reverse dumbbell fly for rear shoulders, 20 lb dumbbells × 10 reps; standing neutral-grip briefcase/hammer curl with no wrist rotation, 25 lb dumbbells × 8 reps each arm. Superset 3 — Set 2: incline-bench chest-supported reverse dumbbell fly, 20 lb dumbbells × 12 reps; standing neutral-grip briefcase/hammer curl with no wrist rotation, 25 lb dumbbells × 10 reps each arm. Superset 3 complete. Back currently feels good and is not sore; lower-back/core work will intentionally use lighter weight as a precaution. Lower-back/core finisher — Round 1: 45-degree Roman-chair back extension holding 25 lb × 10 reps; 45-degree Roman-chair lateral extension holding 25 lb × 10 reps each side; standing dumbbell side bend holding 45 lb × 15 reps each side. Round 2: 45-degree Roman-chair back extension holding 25 lb × 15 reps; 45-degree Roman-chair lateral extension holding 25 lb × 10 reps each side; standing dumbbell side bend holding 45 lb × 15 reps each side. Lower-back/core finisher complete. Decline abdominal work skipped because Deano needed to join a call. Strength session complete. Apple Fitness interim snapshot as of 2:54 PM: HIIT, 291 active calories; Traditional Strength Training, 210 active calories; Outdoor Walks, 0.18 mile and 0.13 mile. Known listed workout active calories: 501, excluding the two walks because their calories were not visible. Daily totals at 2:54 PM: 761 active calories, 1,988 total calories, 88 exercise minutes, 8 stand hours, and 3.68 miles. Snapshot is interim, not the final daily total. Final Apple Fitness daily summary: 1,009 active calories, 2,910 total calories, 137 exercise minutes, 15 stand hours, 9,073 steps, 4.44 miles, and 0 flights climbed.",
       "active_calories": 501
+    },
+    {
+      "date": "2026-09-01",
+      "time": "14:22",
+      "routine": "Shoulders + Back + Triceps",
+      "duration": "28 min traditional strength training",
+      "source": "user reported",
+      "notes": "Compressed strength session completed in 28 minutes. Included shoulder work and all planned back and triceps exercises, including 45-degree Roman-chair lower-back extensions, Roman-chair lateral work on both sides, and standing side bends. Deano reported getting a good workout in the shorter time; faster completion was the specific goal. Exact sets, reps, and weights were not provided. Workout complete."
     }
   ],
   "weight_entries": [
