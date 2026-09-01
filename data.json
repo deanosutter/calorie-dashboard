@@ -1703,6 +1703,98 @@
       "protein_g": 34.4,
       "source": "saved meal — corrected sausage label",
       "meal": "Lunch"
+    },
+    {
+      "date": "2026-08-31",
+      "time": "12:00",
+      "item": "Cold brew coffee with 1/3 cup almond milk",
+      "quantity": 1,
+      "unit": "serving",
+      "calories": 15,
+      "protein_g": 0.3,
+      "source": "saved meal",
+      "meal": "Breakfast"
+    },
+    {
+      "date": "2026-08-31",
+      "time": "12:00",
+      "item": "Celsius energy drink",
+      "quantity": 1,
+      "unit": "can",
+      "calories": 10,
+      "protein_g": 0,
+      "source": "saved standard",
+      "meal": "Breakfast"
+    },
+    {
+      "date": "2026-08-31",
+      "time": "12:00",
+      "item": "Micronized Creatine Monohydrate",
+      "quantity": 1,
+      "unit": "scoop (5 g)",
+      "calories": 0,
+      "protein_g": 0,
+      "source": "saved food item",
+      "meal": "Breakfast"
+    },
+    {
+      "date": "2026-08-31",
+      "time": "12:00",
+      "item": "Thin Greek Yogurt Pepperoni & Veggie Pizza (3 of 8 pieces)",
+      "quantity": 0.375,
+      "unit": "whole pizza",
+      "calories": 612.75,
+      "protein_g": 31.88,
+      "carbs_g": 64.88,
+      "fat_g": 28.13,
+      "source": "saved recipe estimate",
+      "meal": "Lunch"
+    },
+    {
+      "date": "2026-08-31",
+      "time": "12:00",
+      "item": "My Granola Parfait",
+      "quantity": 1,
+      "unit": "serving",
+      "calories": 521,
+      "protein_g": 33.1,
+      "carbs_g": 73.3,
+      "fat_g": 12.9,
+      "source": "saved meal",
+      "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-31",
+      "time": "12:00",
+      "item": "Medium banana (additional)",
+      "quantity": 1,
+      "unit": "banana",
+      "calories": 105,
+      "protein_g": 1.3,
+      "source": "saved food item",
+      "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-31",
+      "time": "12:00",
+      "item": "Trader Joe's Dark Chocolate with Almonds (6 of 12 squares / half bar)",
+      "quantity": 0.5,
+      "unit": "bar",
+      "calories": 130,
+      "protein_g": 1.5,
+      "source": "estimated from product nutrition",
+      "meal": "Snacks"
+    },
+    {
+      "date": "2026-08-31",
+      "time": "12:00",
+      "item": "Saltine crackers",
+      "quantity": 10,
+      "unit": "crackers",
+      "calories": 130,
+      "protein_g": 2,
+      "source": "estimated",
+      "meal": "Snacks"
     }
   ],
   "routines": [
@@ -1897,6 +1989,14 @@
       "duration": "28 min traditional strength training",
       "source": "user reported",
       "notes": "Compressed strength session completed in 28 minutes. Included shoulder work and all planned back and triceps exercises, including 45-degree Roman-chair lower-back extensions, Roman-chair lateral work on both sides, and standing side bends. Deano reported getting a good workout in the shorter time; faster completion was the specific goal. Exact sets, reps, and weights were not provided. Workout complete."
+    },
+    {
+      "date": "2026-08-31",
+      "time": "09:00",
+      "routine": "Chest + Biceps + Triceps Supersets",
+      "duration": "Workout duration not separately reported; 116 total exercise minutes recorded for the day",
+      "source": "user reported + Apple Fitness screenshot",
+      "notes": "Chest workout supersetted with biceps and triceps. Exact exercises, sets, reps, weights, and separate workout duration were not provided. Final Apple Fitness daily summary: 1,003 active calories, 3,001 total calories, 116 exercise minutes, 15 stand hours, 9,281 steps, 4.51 miles, and 9 flights climbed."
     }
   ],
   "weight_entries": [
@@ -2129,6 +2229,18 @@
       "flights_climbed": 9,
       "source": "Apple Fitness screenshot (interim daily summary as of 2:23 PM)",
       "synced_at": "2026-09-01T14:23:00-05:00"
+    },
+    {
+      "date": "2026-08-31",
+      "calories": 1003,
+      "total_calories": 3001,
+      "exercise_minutes": 116,
+      "stand_hours": 15,
+      "steps": 9281,
+      "distance_mi": 4.51,
+      "flights_climbed": 9,
+      "source": "Apple Fitness screenshot (final daily summary)",
+      "synced_at": "2026-09-01"
     }
   ]
 }
